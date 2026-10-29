@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubre Zuleta, disfruta de cabañas, cabalgatas, bordados artesanales y paseos por la comunidad.">
   <title>Esthela Aguilar | Tradición Andina</title>
 
   <style>
@@ -19,13 +18,13 @@
 
     body {
       font-family: Arial, sans-serif;
-      color: #352b23;
-      background: #fffaf2;
       line-height: 1.6;
+      color: #333;
+      background: #fffaf2;
     }
 
     header {
-      background: #354d35;
+      background: #386641;
       color: white;
       padding: 20px;
       text-align: center;
@@ -43,165 +42,189 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
-      display: inline-block;
+      margin: 0 12px;
+      font-weight: bold;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    .portada {
-      background: linear-gradient(135deg, #e9d5ae, #f8edda);
+    section {
+      padding: 45px 20px;
       text-align: center;
-      padding: 85px 20px;
+    }
+
+    .portada {
+      background: #e9edc9;
+      padding: 70px 20px;
     }
 
     .portada h2 {
-      font-size: 38px;
-      color: #354d35;
+      color: #386641;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
     .portada p {
-      font-size: 19px;
-      margin-bottom: 25px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 18px;
     }
 
     .boton {
       display: inline-block;
-      background: #7b432b;
+      background: #25d366;
       color: white;
       text-decoration: none;
-      padding: 13px 22px;
+      padding: 12px 22px;
       border-radius: 8px;
-      margin-top: 10px;
       font-weight: bold;
-      border: none;
-      cursor: pointer;
+      margin-top: 10px;
     }
 
     .boton:hover {
-      background: #5c3020;
+      background: #1da851;
     }
 
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      color: #354d35;
-      font-size: 29px;
+    h2.titulo {
+      color: #386641;
+      font-size: 28px;
       margin-bottom: 15px;
+    }
+
+    .introduccion {
+      max-width: 750px;
+      margin: 0 auto 25px;
     }
 
     .servicios {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 22px;
-      max-width: 1050px;
+      max-width: 1100px;
       margin: 30px auto 0;
     }
 
     .tarjeta {
       background: white;
-      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px #00000012;
+      padding: 28px 18px;
+      box-shadow: 0 4px 12px #00000015;
+      border: 1px solid #e3e3d3;
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid transparent;
     }
 
     .tarjeta:hover,
     .tarjeta:focus-visible {
       transform: translateY(-5px);
-      box-shadow: 0 6px 18px #00000020;
-      border-color: #8b9a75;
-      outline: none;
+      box-shadow: 0 8px 18px #00000025;
+      outline: 2px solid #386641;
     }
 
-    .tarjeta .icono {
+    .tarjeta .emoji {
+      display: block;
       font-size: 42px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .tarjeta h3 {
-      color: #7b432b;
-      margin-bottom: 10px;
+      color: #386641;
+      margin-bottom: 8px;
     }
 
-    /* Galería de fotografías */
+    .tarjeta p {
+      font-size: 14px;
+    }
+
+    .indicacion {
+      margin-top: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* GALERÍA DE FOTOGRAFÍAS */
+
     .galeria {
       display: none;
-      padding: 35px 20px;
-      background: #f2eadb;
-      border-top: 3px solid #354d35;
-      text-align: center;
+      background: #f0f2e6;
+      padding: 40px 20px;
     }
 
-    .galeria.activa {
+    .galeria.visible {
       display: block;
     }
 
     .galeria h2 {
-      color: #354d35;
+      color: #386641;
       margin-bottom: 10px;
     }
 
-    .galeria p {
-      margin-bottom: 15px;
+    .galeria-descripcion {
+      margin-bottom: 25px;
     }
 
     .fotos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-      max-width: 1050px;
-      margin: 25px auto;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .foto-item {
       background: white;
-      padding: 10px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px #00000012;
+      overflow: hidden;
+      box-shadow: 0 4px 12px #00000018;
     }
 
-    .fotos img {
+    .foto-item img {
       display: block;
       width: 100%;
-      height: 230px;
+      height: 240px;
       object-fit: cover;
-      border-radius: 8px;
     }
 
-    .foto-error {
-      display: flex;
-      min-height: 180px;
-      padding: 15px;
-      align-items: center;
-      justify-content: center;
-      background: #eee6d8;
-      color: #654a36;
-      border-radius: 8px;
-      overflow-wrap: anywhere;
+    .foto-item p {
+      padding: 12px;
+      font-weight: bold;
+      color: #386641;
     }
 
     .cerrar {
-      background: #354d35;
+      border: none;
+      background: #386641;
+      color: white;
+      padding: 11px 22px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 25px;
     }
 
-    .ubicacion {
-      background: #e9efdf;
+    .cerrar:hover {
+      background: #283f2d;
+    }
+
+    .nosotros {
+      background: white;
+    }
+
+    .contacto {
+      background: #e9edc9;
+    }
+
+    .contacto p {
+      margin: 8px 0;
     }
 
     footer {
-      background: #354d35;
+      background: #283f2d;
       color: white;
-      padding: 25px 15px;
       text-align: center;
+      padding: 20px;
     }
 
     @media (max-width: 600px) {
@@ -209,30 +232,29 @@
         font-size: 24px;
       }
 
-      .portada h2 {
-        font-size: 30px;
-      }
-
       nav a {
-        margin: 5px;
+        display: inline-block;
+        margin: 5px 8px;
       }
 
-      .fotos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+      .portada h2 {
+        font-size: 28px;
       }
 
-      .fotos img {
-        height: 160px;
+      section {
+        padding: 35px 15px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- ENCABEZADO -->
   <header>
     <h1>Esthela Aguilar</h1>
     <p>Tradición Andina</p>
+    <p>Descanso, aventura, cultura y tradición</p>
 
     <nav>
       <a href="#inicio">Inicio</a>
@@ -242,113 +264,143 @@
     </nav>
   </header>
 
-  <main>
-    <section class="portada" id="inicio">
-      <h2>Bienvenidos a Zuleta</h2>
-      <p>Descanso, aventura, cultura y tradición.</p>
-      <p>Vive una experiencia auténtica en el corazón de los Andes ecuatorianos.</p>
+  <!-- PORTADA -->
+  <section class="portada" id="inicio">
+    <h2>Bienvenidos a Zuleta</h2>
+    <p>
+      Descubre la belleza de los Andes ecuatorianos,
+      disfruta de nuestras cabañas, vive aventuras a caballo
+      y conoce las tradiciones de nuestra comunidad.
+    </p>
 
-      <a class="boton"
-         href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-         target="_blank" rel="noopener noreferrer">
-        Consultar por WhatsApp
-      </a>
-    </section>
+    <a
+      class="boton"
+      href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+      target="_blank"
+      rel="noopener noreferrer">
+      Consultar por WhatsApp
+    </a>
+  </section>
 
-    <section id="servicios">
-      <h2>Nuestros servicios</h2>
-      <p>Haz clic en el servicio que deseas conocer y mira sus fotografías.</p>
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2 class="titulo">Nuestros servicios</h2>
+    <p class="introduccion">
+      Vive una experiencia auténtica en Zuleta.
+      Haz clic en cualquiera de nuestros servicios para ver las fotografías.
+    </p>
 
-      <div class="servicios">
-        <article class="tarjeta" role="button" tabindex="0"
-          onclick="mostrarGaleria('hospedaje')"
-          onkeydown="activarConTeclado(event, 'hospedaje')">
-          <div class="icono">🏡</div>
-          <h3>Hospedaje en cabañas</h3>
-          <p>Descansa en un ambiente acogedor rodeado de naturaleza y tranquilidad.</p>
-        </article>
+    <div class="servicios">
 
-        <article class="tarjeta" role="button" tabindex="0"
-          onclick="mostrarGaleria('cabalgatas')"
-          onkeydown="activarConTeclado(event, 'cabalgatas')">
-          <div class="icono">🐎</div>
-          <h3>Cabalgatas</h3>
-          <p>Disfruta de paseos a caballo y contempla los paisajes andinos.</p>
-        </article>
-
-        <article class="tarjeta" role="button" tabindex="0"
-          onclick="mostrarGaleria('bordados')"
-          onkeydown="activarConTeclado(event, 'bordados')">
-          <div class="icono">🧵</div>
-          <h3>Bordados artesanales</h3>
-          <p>Conoce y adquiere bordados que conservan la tradición artesanal de Zuleta.</p>
-        </article>
-
-        <article class="tarjeta" role="button" tabindex="0"
-          onclick="mostrarGaleria('paseos')"
-          onkeydown="activarConTeclado(event, 'paseos')">
-          <div class="icono">🌄</div>
-          <h3>Paseos por la comunidad</h3>
-          <p>Explora la comunidad, sus paisajes, cultura y costumbres.</p>
-        </article>
+      <div class="tarjeta"
+           role="button"
+           tabindex="0"
+           onclick="mostrarGaleria('hospedaje')"
+           onkeydown="activarConTeclado(event, 'hospedaje')">
+        <span class="emoji">🏡</span>
+        <h3>Hospedaje en cabañas</h3>
+        <p>Disfruta de tranquilidad y descanso rodeado de naturaleza.</p>
       </div>
-    </section>
 
-    <!-- Las fotografías seleccionadas aparecen aquí -->
-    <section id="galeria" class="galeria" aria-live="polite">
-      <h2 id="tituloGaleria">Nuestras fotografías</h2>
-      <p id="descripcionGaleria"></p>
+      <div class="tarjeta"
+           role="button"
+           tabindex="0"
+           onclick="mostrarGaleria('cabalgatas')"
+           onkeydown="activarConTeclado(event, 'cabalgatas')">
+        <span class="emoji">🐎</span>
+        <h3>Cabalgatas</h3>
+        <p>Explora los paisajes andinos y vive una aventura diferente.</p>
+      </div>
 
-      <div id="contenedorFotos" class="fotos"></div>
+      <div class="tarjeta"
+           role="button"
+           tabindex="0"
+           onclick="mostrarGaleria('bordados')"
+           onkeydown="activarConTeclado(event, 'bordados')">
+        <span class="emoji">🧵</span>
+        <h3>Bordados artesanales</h3>
+        <p>Conoce los bordados que representan nuestra cultura y tradición.</p>
+      </div>
 
-      <button class="boton cerrar" type="button"
-        onclick="cerrarGaleria()">
-        Cerrar fotografías
-      </button>
-    </section>
+      <div class="tarjeta"
+           role="button"
+           tabindex="0"
+           onclick="mostrarGaleria('paseos')"
+           onkeydown="activarConTeclado(event, 'paseos')">
+        <span class="emoji">🌄</span>
+        <h3>Paseos por la comunidad</h3>
+        <p>Descubre lugares hermosos como La Laguna Roja de Zuleta.</p>
+      </div>
 
-    <section id="nosotros">
-      <h2>Tradición que nos une</h2>
-      <p>
-        En Esthela Aguilar – Tradición Andina te invitamos a descubrir
-        la riqueza cultural, la hospitalidad y los paisajes de Zuleta.
-        Queremos compartir contigo experiencias que conectan la naturaleza
-        con nuestras costumbres y tradiciones.
-      </p>
-    </section>
+    </div>
 
-    <section class="ubicacion" id="contacto">
-      <h2>Visítanos</h2>
-      <p>📍 Zuleta, sector Pan de Azúcar, Imbabura, Ecuador</p>
-      <p>📱 Contáctanos para consultar disponibilidad y precios.</p>
+    <p class="indicacion">Selecciona un servicio para ver sus fotografías.</p>
+  </section>
 
-      <a class="boton"
-         href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-         target="_blank" rel="noopener noreferrer">
-        Escribir por WhatsApp
-      </a>
-    </section>
-  </main>
+  <!-- GALERÍA -->
+  <section id="galeria" class="galeria" aria-live="polite">
+    <h2 id="tituloGaleria">Fotografías</h2>
+    <p id="descripcionGaleria" class="galeria-descripcion"></p>
 
+    <div id="contenedorFotos" class="fotos"></div>
+
+    <button class="cerrar" type="button" onclick="cerrarGaleria()">
+      Cerrar fotografías
+    </button>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="nosotros">
+    <h2 class="titulo">Sobre nosotros</h2>
+    <p class="introduccion">
+      En Esthela Aguilar – Tradición Andina compartimos la riqueza
+      cultural, los paisajes y las tradiciones de Zuleta.
+      Queremos que cada visitante disfrute de una experiencia
+      especial en nuestra comunidad.
+    </p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2 class="titulo">Contáctanos</h2>
+    <p><strong>Esthela Aguilar – Tradición Andina</strong></p>
+    <p>📍 Zuleta, sector Pan de Azúcar, Imbabura, Ecuador</p>
+    <p>📱 WhatsApp: 0986222426</p>
+
+    <a
+      class="boton"
+      href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+      target="_blank"
+      rel="noopener noreferrer">
+      Escríbenos por WhatsApp
+    </a>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p>Esthela Aguilar – Tradición Andina</p>
-    <p>Zuleta, Imbabura, Ecuador</p>
-    <p>© 2026 | Todos los derechos reservados</p>
+    <p>© 2026 Esthela Aguilar – Tradición Andina</p>
+    <p>Descanso, aventura, cultura y tradición.</p>
   </footer>
 
+  <!-- CÓDIGO PARA ABRIR LAS FOTOGRAFÍAS -->
   <script>
-    /*
-      Las rutas de las fotografías deben coincidir con los nombres
-      de los archivos que subas a la carpeta "imagenes" de GitHub.
-    */
     const galerias = {
       hospedaje: {
         titulo: "Hospedaje en cabañas",
         descripcion: "Conoce nuestros espacios de descanso.",
         fotos: [
-          "imagenes/cabana1.jpg",
-          "imagenes/cabana2.jpg",
-          "imagenes/cabana3.jpg"
+          {
+            src: "imagenes/cabana1.jpg",
+            alt: "Cabaña 1"
+          },
+          {
+            src: "imagenes/cabana2.jpg",
+            alt: "Cabaña 2"
+          },
+          {
+            src: "imagenes/cabana3.jpg",
+            alt: "Cabaña 3"
+          }
         ]
       },
 
@@ -356,78 +408,106 @@
         titulo: "Cabalgatas",
         descripcion: "Disfruta de los paisajes andinos a caballo.",
         fotos: [
-          "imagenes/cabalgata1.jpg",
-          "imagenes/cabalgata2.jpg",
-          "imagenes/cabalgata3.jpg"
+          {
+            src: "imagenes/cabalgata1.jpg",
+            alt: "Cabalgata por Zuleta"
+          },
+          {
+            src: "imagenes/cabalgata2.jpg",
+            alt: "Cabalgata en los Andes"
+          },
+          {
+            src: "imagenes/cabalgata3.jpg",
+            alt: "Paseo a caballo"
+          }
         ]
       },
 
       bordados: {
         titulo: "Bordados artesanales",
-        descripcion: "Descubre los bordados tradicionales de Zuleta.",
+        descripcion: "Descubre el arte y la tradición de nuestros bordados.",
         fotos: [
-          "imagenes/bordados1.jpg",
-          "imagenes/bordados2.jpg",
-          "imagenes/bordados3.jpg"
+          {
+            src: "imagenes/bordados1.jpg",
+            alt: "Bordado artesanal 1"
+          },
+          {
+            src: "imagenes/bordados2.jpg",
+            alt: "Bordado artesanal 2"
+          },
+          {
+            src: "imagenes/bordados3.jpg",
+            alt: "Bordado artesanal 3"
+          }
         ]
       },
 
       paseos: {
         titulo: "Paseos por la comunidad",
-        descripcion: "Explora la Laguna Roja y los paisajes de Zuleta.",
+        descripcion: "Descubre La Laguna Roja y los paisajes de Zuleta.",
         fotos: [
-          "imagenes/laguna-roja.jpg",
-          "imagenes/paisaje-zuleta.jpg",
-          "imagenes/paseo-zuleta.jpg"
+          {
+            src: "imagenes/laguna-roja.jpg",
+            alt: "La Laguna Roja de Zuleta"
+          },
+          {
+            src: "imagenes/paisaje-zuleta.jpg",
+            alt: "Paisajes de Zuleta"
+          },
+          {
+            src: "imagenes/paseo-zuleta.jpg",
+            alt: "Paseo por la comunidad de Zuleta"
+          }
         ]
       }
     };
 
     function mostrarGaleria(servicio) {
-      const datos = galerias[servicio];
+      const galeria = galerias[servicio];
 
-      if (!datos) return;
+      if (!galeria) return;
 
-      document.getElementById("tituloGaleria").textContent = datos.titulo;
+      document.getElementById("tituloGaleria").textContent =
+        galeria.titulo;
+
       document.getElementById("descripcionGaleria").textContent =
-        datos.descripcion;
+        galeria.descripcion;
 
       const contenedor = document.getElementById("contenedorFotos");
       contenedor.replaceChildren();
 
-      datos.fotos.forEach(function(ruta) {
-        const tarjetaFoto = document.createElement("div");
-        tarjetaFoto.className = "foto-item";
+      galeria.fotos.forEach(function(foto) {
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "foto-item";
 
         const imagen = document.createElement("img");
-        imagen.src = ruta;
-        imagen.alt = datos.titulo;
+        imagen.src = foto.src;
+        imagen.alt = foto.alt;
         imagen.loading = "lazy";
 
         imagen.onerror = function() {
-          const aviso = document.createElement("div");
-          aviso.className = "foto-error";
-          aviso.textContent =
-            "No se encontró esta foto: " + ruta +
-            ". Revisa que el archivo esté en la carpeta imagenes.";
-
-          imagen.replaceWith(aviso);
+          tarjeta.innerHTML = "";
+          const mensaje = document.createElement("p");
+          mensaje.textContent =
+            "No se encontró esta foto. Verifica el nombre y la carpeta en GitHub.";
+          tarjeta.appendChild(mensaje);
         };
 
-        tarjetaFoto.appendChild(imagen);
-        contenedor.appendChild(tarjetaFoto);
+        const texto = document.createElement("p");
+        texto.textContent = foto.alt;
+
+        tarjeta.appendChild(imagen);
+        tarjeta.appendChild(texto);
+        contenedor.appendChild(tarjeta);
       });
 
-      const galeria = document.getElementById("galeria");
-      galeria.classList.add("activa");
-      galeria.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      const seccion = document.getElementById("galeria");
+      seccion.classList.add("visible");
+      seccion.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function cerrarGaleria() {
-      document.getElementById("galeria").classList.remove("activa");
+      document.getElementById("galeria").classList.remove("visible");
     }
 
     function activarConTeclado(evento, servicio) {
@@ -437,5 +517,6 @@
       }
     }
   </script>
+
 </body>
 </html>
