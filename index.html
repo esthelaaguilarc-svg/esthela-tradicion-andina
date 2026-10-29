@@ -3,13 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Esthela Aguilar | Tradición Andina</title>
 
+  <meta name="description" content="Descubre Zuleta, disfruta de hospedaje en cabañas, cabalgatas, bordados artesanales y paseos por la comunidad.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --verde: #405b43;
+      --verde-oscuro: #293d2e;
+      --beige: #f5f0e6;
+      --crema: #fffdf8;
+      --tierra: #a87953;
+      --texto: #393b34;
+      --blanco: #ffffff;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -17,238 +35,503 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--crema);
+      color: var(--texto);
       line-height: 1.6;
-      color: #333;
-      background: #fffaf2;
     }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* MENÚ */
 
     header {
-      background: #386641;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: rgba(255, 253, 248, 0.96);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
     }
 
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 5px;
+    .logo {
+      color: var(--verde);
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--tierra);
+      font-weight: 600;
     }
 
     nav {
-      margin-top: 15px;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
+      color: var(--texto);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--tierra);
     }
 
-    section {
-      padding: 45px 20px;
-      text-align: center;
+    /* PORTADA */
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(24, 42, 29, 0.82), rgba(24, 42, 29, 0.15)),
+        url("imagenes/portada-zuleta.jpg") center/cover no-repeat;
     }
 
-    .portada {
-      background: #e9edc9;
-      padding: 70px 20px;
+    .hero-content {
+      max-width: 650px;
     }
 
-    .portada h2 {
-      color: #386641;
-      font-size: 34px;
-      margin-bottom: 15px;
+    .hero .subtitulo {
+      color: #e8d5b8;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
-    .portada p {
-      max-width: 700px;
-      margin: 0 auto 20px;
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.12;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
       font-size: 18px;
+      max-width: 530px;
+      margin-bottom: 30px;
     }
 
     .boton {
       display: inline-block;
-      background: #25d366;
+      background: var(--tierra);
       color: white;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-top: 10px;
+      padding: 14px 27px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
     }
 
     .boton:hover {
-      background: #1da851;
+      background: var(--verde);
+      transform: translateY(-3px);
     }
 
-    .titulo {
-      color: #386641;
-      font-size: 28px;
-      margin-bottom: 15px;
+    /* SECCIONES */
+
+    section {
+      padding: 85px 7%;
     }
 
-    .introduccion {
-      max-width: 750px;
-      margin: 0 auto 25px;
+    .encabezado {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
     }
 
-    .servicios {
+    .encabezado span {
+      color: var(--tierra);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .encabezado h2 {
+      color: var(--verde-oscuro);
+      font-size: clamp(30px, 4vw, 43px);
+      margin: 10px 0;
+    }
+
+    .encabezado p {
+      color: #77766d;
+    }
+
+    /* SERVICIOS */
+
+    #servicios {
+      background: var(--beige);
+    }
+
+    .servicios-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-      max-width: 1100px;
-      margin: 30px auto 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 23px;
     }
 
-    .tarjeta {
+    .servicio {
       background: white;
-      border-radius: 12px;
-      padding: 28px 18px;
-      box-shadow: 0 4px 12px #00000015;
-      border: 1px solid #e3e3d3;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: 0.35s;
     }
 
-    .tarjeta:hover,
-    .tarjeta:focus-visible {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px #00000025;
-      outline: 2px solid #386641;
+    .servicio:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
     }
 
-    .emoji {
+    .servicio img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
       display: block;
-      font-size: 42px;
-      margin-bottom: 12px;
+      transition: transform 0.5s;
     }
 
-    .tarjeta h3 {
-      color: #386641;
+    .servicio:hover img {
+      transform: scale(1.04);
+    }
+
+    .servicio-info {
+      padding: 22px;
+    }
+
+    .servicio-info h3 {
+      font-size: 21px;
+      color: var(--verde);
       margin-bottom: 8px;
     }
 
-    .tarjeta p {
+    .servicio-info p {
+      color: #77766d;
       font-size: 14px;
+      margin-bottom: 14px;
     }
 
-    .indicacion {
-      margin-top: 20px;
-      color: #666;
-      font-size: 14px;
+    .ver-mas {
+      color: var(--tierra);
+      font-weight: 700;
+      font-size: 13px;
     }
 
     /* GALERÍA */
 
-    .galeria {
-      display: none;
-      background: #f0f2e6;
-      padding: 40px 20px;
+    #galeria {
+      background: var(--crema);
     }
 
-    .galeria.visible {
+    .galeria-grupo {
+      margin-bottom: 65px;
+    }
+
+    .galeria-titulo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #e6dfd2;
+      padding-bottom: 13px;
+    }
+
+    .galeria-titulo h3 {
+      color: var(--verde);
+      font-size: 27px;
+    }
+
+    .galeria-titulo span {
+      color: var(--tierra);
+      font-size: 13px;
+    }
+
+    .mosaico {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 190px 190px;
+      gap: 12px;
+    }
+
+    .foto {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #e9e2d5;
+    }
+
+    .foto:first-child {
+      grid-row: span 2;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.5s;
     }
 
-    .galeria h2 {
-      color: #386641;
-      margin-bottom: 10px;
+    .foto:hover img {
+      transform: scale(1.07);
     }
 
-    .galeria-descripcion {
+    .foto::after {
+      content: "Ver fotografía";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px 15px 14px;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .foto:hover::after,
+    .foto:focus-visible::after {
+      opacity: 1;
+    }
+
+    .foto:focus-visible {
+      outline: 3px solid var(--tierra);
+      outline-offset: 3px;
+    }
+
+    /* NOSOTROS */
+
+    #nosotros {
+      background: var(--beige);
+    }
+
+    .nosotros-contenido {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .nosotros-contenido h2 {
+      color: var(--verde);
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .nosotros-contenido p {
+      font-size: 17px;
+      color: #66665d;
+    }
+
+    /* CONTACTO */
+
+    #contacto {
+      text-align: center;
+      background: var(--verde-oscuro);
+      color: white;
+    }
+
+    #contacto h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    #contacto p {
       margin-bottom: 25px;
     }
 
-    .fotos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    /* PIE DE PÁGINA */
+
+    footer {
+      background: #202d23;
+      color: #ddd9ce;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    /* BOTÓN FLOTANTE WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      bottom: 23px;
+      right: 23px;
+      background: #25d366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      z-index: 30;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+    }
+
+    /* VISOR DE FOTOGRAFÍAS */
+
+    .visor {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 18, 13, 0.95);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 70px;
+    }
+
+    .visor.activo {
+      display: flex;
+    }
+
+    .visor-contenido {
       max-width: 1100px;
-      margin: auto;
-    }
-
-    .foto-item {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px #00000018;
-    }
-
-    .foto-item img {
-      display: block;
       width: 100%;
-      height: 240px;
-      object-fit: cover;
+      text-align: center;
     }
 
-    .foto-item p {
-      padding: 12px;
-      font-weight: bold;
-      color: #386641;
+    .visor img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 10px;
     }
 
-    .mensaje-error {
-      padding: 20px;
-      color: #9b2226;
-      font-weight: normal !important;
+    .visor-contador {
+      color: white;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .cerrar,
+    .anterior,
+    .siguiente {
+      position: absolute;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 25px;
     }
 
     .cerrar {
-      border: none;
-      background: #386641;
-      color: white;
-      padding: 11px 22px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 25px;
+      top: 20px;
+      right: 25px;
     }
 
-    .cerrar:hover {
-      background: #283f2d;
+    .anterior {
+      left: 18px;
+      top: 50%;
     }
 
-    .nosotros {
-      background: white;
+    .siguiente {
+      right: 18px;
+      top: 50%;
     }
 
-    .contacto {
-      background: #e9edc9;
+    .cerrar:hover,
+    .anterior:hover,
+    .siguiente:hover {
+      background: var(--tierra);
     }
 
-    .contacto p {
-      margin: 8px 0;
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    footer {
-      background: #283f2d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 24px;
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 5px 8px;
+      nav {
+        justify-content: center;
+        gap: 14px;
       }
 
-      .portada h2 {
-        font-size: 28px;
+      .hero {
+        min-height: 490px;
+        padding: 65px 7%;
+      }
+
+      .hero p {
+        font-size: 16px;
       }
 
       section {
-        padding: 35px 15px;
+        padding: 65px 6%;
+      }
+
+      .servicios-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaico {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 210px 150px;
+      }
+
+      .foto:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .galeria-titulo {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .visor {
+        padding: 65px 12px;
+      }
+
+      .visor img {
+        max-height: 65vh;
+      }
+
+      .anterior {
+        left: 5px;
+      }
+
+      .siguiente {
+        right: 5px;
       }
     }
   </style>
@@ -256,273 +539,379 @@
 
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- MENÚ PRINCIPAL -->
+
   <header>
-    <h1>Esthela Aguilar</h1>
-    <p>Tradición Andina</p>
-    <p>Descanso, aventura, cultura y tradición</p>
+    <a href="#inicio" class="logo">
+      Esthela Aguilar
+      <span>Tradición Andina</span>
+    </a>
 
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <!-- PORTADA -->
-  <section class="portada" id="inicio">
-    <h2>Bienvenidos a Zuleta</h2>
-    <p>
-      Descubre la belleza de los Andes ecuatorianos,
-      disfruta de nuestras cabañas, vive aventuras a caballo
-      y conoce las tradiciones de nuestra comunidad.
-    </p>
 
-    <a
-      class="boton"
-      href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-      target="_blank"
-      rel="noopener noreferrer">
-      Consultar por WhatsApp
-    </a>
-  </section>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <div class="subtitulo">Bienvenidos a Zuleta</div>
 
-  <!-- SERVICIOS -->
-  <section id="servicios">
-    <h2 class="titulo">Nuestros servicios</h2>
-    <p class="introduccion">
-      Vive una experiencia auténtica en Zuleta.
-      Haz clic en cualquiera de nuestros servicios para ver las fotografías.
-    </p>
+        <h1>Descanso, aventura, cultura y tradición</h1>
 
-    <div class="servicios">
+        <p>
+          Vive una experiencia especial en el corazón de los Andes.
+          Descubre nuestros paisajes, hospedaje, cabalgatas y
+          la riqueza de los bordados artesanales.
+        </p>
 
-      <div class="tarjeta" role="button" tabindex="0"
-           onclick="mostrarGaleria('hospedaje')"
-           onkeydown="activarConTeclado(event, 'hospedaje')">
-        <span class="emoji">🏡</span>
-        <h3>Hospedaje en cabañas</h3>
-        <p>Disfruta de tranquilidad y descanso rodeado de naturaleza.</p>
+        <a class="boton" href="#servicios">
+          Descubre nuestros servicios
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios">
+      <div class="encabezado">
+        <span>Nuestras experiencias</span>
+        <h2>Descubre lo que ofrecemos</h2>
+        <p>
+          Disfruta de la naturaleza, la cultura y la hospitalidad
+          de nuestra comunidad.
+        </p>
       </div>
 
-      <div class="tarjeta" role="button" tabindex="0"
-           onclick="mostrarGaleria('cabalgatas')"
-           onkeydown="activarConTeclado(event, 'cabalgatas')">
-        <span class="emoji">🐎</span>
-        <h3>Cabalgatas</h3>
-        <p>Explora los paisajes andinos y vive una aventura diferente.</p>
+      <div class="servicios-grid">
+
+        <article class="servicio" onclick="mostrarGaleria('hospedaje')">
+          <img src="imagenes/cabana1.jpg" alt="Hospedaje en cabañas"
+               onerror="this.style.visibility='hidden'">
+          <div class="servicio-info">
+            <h3>Hospedaje en cabañas</h3>
+            <p>Un espacio acogedor para descansar y disfrutar de la naturaleza.</p>
+            <span class="ver-mas">Ver fotografías →</span>
+          </div>
+        </article>
+
+        <article class="servicio" onclick="mostrarGaleria('cabalgatas')">
+          <img src="imagenes/cabalgata1.jpg" alt="Cabalgatas en Zuleta"
+               onerror="this.style.visibility='hidden'">
+          <div class="servicio-info">
+            <h3>Cabalgatas</h3>
+            <p>Recorre los paisajes andinos y disfruta de una aventura especial.</p>
+            <span class="ver-mas">Ver fotografías →</span>
+          </div>
+        </article>
+
+        <article class="servicio" onclick="mostrarGaleria('bordados')">
+          <img src="imagenes/bordados1.jpg" alt="Bordados artesanales"
+               onerror="this.style.visibility='hidden'">
+          <div class="servicio-info">
+            <h3>Bordados artesanales</h3>
+            <p>Conoce el arte y los detalles de los bordados tradicionales de Zuleta.</p>
+            <span class="ver-mas">Ver fotografías →</span>
+          </div>
+        </article>
+
+        <article class="servicio" onclick="mostrarGaleria('paseos')">
+          <img src="Laguna%20Roja%20de%20Zuleta.png" alt="Laguna Roja de Zuleta"
+               onerror="this.style.visibility='hidden'">
+          <div class="servicio-info">
+            <h3>Paseos por la comunidad</h3>
+            <p>Explora los paisajes y atractivos naturales de nuestra comunidad.</p>
+            <span class="ver-mas">Ver fotografías →</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- GALERÍA FOTOGRÁFICA -->
+
+    <section id="galeria">
+      <div class="encabezado">
+        <span>Momentos especiales</span>
+        <h2>Galería de fotografías</h2>
+        <p>
+          Una mirada a nuestras experiencias, paisajes y tradiciones.
+          Selecciona una fotografía para ampliarla.
+        </p>
       </div>
 
-      <div class="tarjeta" role="button" tabindex="0"
-           onclick="mostrarGaleria('bordados')"
-           onkeydown="activarConTeclado(event, 'bordados')">
-        <span class="emoji">🧵</span>
-        <h3>Bordados artesanales</h3>
-        <p>Conoce los bordados que representan nuestra cultura y tradición.</p>
+      <div id="galerias"></div>
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros">
+      <div class="nosotros-contenido">
+        <h2>Tradición, naturaleza y hospitalidad</h2>
+        <p>
+          En Zuleta, sector Pan de Azúcar, te invitamos a disfrutar
+          de una experiencia que une el descanso, la aventura y
+          la cultura andina. Queremos compartir contigo la belleza
+          de nuestra comunidad y sus tradiciones.
+        </p>
       </div>
+    </section>
 
-      <div class="tarjeta" role="button" tabindex="0"
-           onclick="mostrarGaleria('paseos')"
-           onkeydown="activarConTeclado(event, 'paseos')">
-        <span class="emoji">🌄</span>
-        <h3>Paseos por la comunidad</h3>
-        <p>Descubre lugares hermosos como La Laguna Roja de Zuleta.</p>
-      </div>
+    <!-- CONTACTO -->
 
-    </div>
+    <section id="contacto">
+      <h2>¡Te esperamos en Zuleta!</h2>
+      <p>Comunícate con nosotros para conocer nuestros servicios.</p>
 
-    <p class="indicacion">
-      Selecciona un servicio para ver sus fotografías.
-    </p>
-  </section>
+      <a class="boton"
+         href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+         target="_blank" rel="noopener">
+        Contactar por WhatsApp
+      </a>
+    </section>
 
-  <!-- GALERÍA -->
-  <section id="galeria" class="galeria" aria-live="polite">
-    <h2 id="tituloGaleria">Fotografías</h2>
-    <p id="descripcionGaleria" class="galeria-descripcion"></p>
-
-    <div id="contenedorFotos" class="fotos"></div>
-
-    <button class="cerrar" type="button" onclick="cerrarGaleria()">
-      Cerrar fotografías
-    </button>
-  </section>
-
-  <!-- NOSOTROS -->
-  <section id="nosotros" class="nosotros">
-    <h2 class="titulo">Sobre nosotros</h2>
-    <p class="introduccion">
-      En Esthela Aguilar – Tradición Andina compartimos la riqueza
-      cultural, los paisajes y las tradiciones de Zuleta.
-      Queremos que cada visitante disfrute de una experiencia
-      especial en nuestra comunidad.
-    </p>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto">
-    <h2 class="titulo">Contáctanos</h2>
-    <p><strong>Esthela Aguilar – Tradición Andina</strong></p>
-    <p>📍 Zuleta, sector Pan de Azúcar, Imbabura, Ecuador</p>
-    <p>📱 WhatsApp: XXXXXXX</p>
-
-    <a
-      class="boton"
-      href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-      target="_blank"
-      rel="noopener noreferrer">
-      Escríbenos por WhatsApp
-    </a>
-  </section>
+  </main>
 
   <!-- PIE DE PÁGINA -->
+
   <footer>
-    <p>© 2026 Esthela Aguilar – Tradición Andina</p>
-    <p>Descanso, aventura, cultura y tradición.</p>
+    <p>Esthela Aguilar – Tradición Andina</p>
+    <p>Zuleta, sector Pan de Azúcar, Imbabura – Ecuador</p>
+    <p>© 2026 Todos los derechos reservados.</p>
   </footer>
 
-  <!-- JAVASCRIPT DE LAS GALERÍAS -->
+  <!-- BOTÓN FLOTANTE -->
+
+  <a class="whatsapp"
+     href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+     target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    W
+  </a>
+
+  <!-- VISOR DE FOTOGRAFÍAS -->
+
+  <div class="visor" id="visor" role="dialog"
+       aria-modal="true" aria-label="Galería de fotografías">
+
+    <button class="cerrar" onclick="cerrarGaleria()"
+            aria-label="Cerrar galería">×</button>
+
+    <button class="anterior" onclick="cambiarFoto(-1)"
+            aria-label="Fotografía anterior">‹</button>
+
+    <div class="visor-contenido">
+      <img id="fotoAmpliada" src="" alt="Fotografía ampliada">
+      <div class="visor-contador" id="contador"></div>
+    </div>
+
+    <button class="siguiente" onclick="cambiarFoto(1)"
+            aria-label="Fotografía siguiente">›</button>
+  </div>
+
   <script>
+    // FOTOGRAFÍAS DE CADA SERVICIO
+    // Los nombres deben coincidir exactamente con los archivos de GitHub.
+
     const galerias = {
       hospedaje: {
         titulo: "Hospedaje en cabañas",
-        descripcion: "Conoce nuestros espacios de descanso.",
         fotos: [
-          {
-            src: "imagenes/cabana1.jpg",
-            alt: "Cabaña 1"
-          },
-          {
-            src: "imagenes/cabana2.jpg",
-            alt: "Cabaña 2"
-          },
-          {
-            src: "imagenes/cabana3.jpg",
-            alt: "Cabaña 3"
-          }
+          "imagenes/cabana1.jpg",
+          "imagenes/cabana2.jpg",
+          "imagenes/cabana3.jpg"
         ]
       },
 
       cabalgatas: {
         titulo: "Cabalgatas",
-        descripcion: "Disfruta de los paisajes andinos a caballo.",
         fotos: [
-          {
-            src: "imagenes/cabalgata1.jpg",
-            alt: "Cabalgata por Zuleta"
-          },
-          {
-            src: "imagenes/cabalgata2.jpg",
-            alt: "Cabalgata en los Andes"
-          },
-          {
-            src: "imagenes/cabalgata3.jpg",
-            alt: "Paseo a caballo"
-          }
+          "imagenes/cabalgata1.jpg",
+          "imagenes/cabalgata2.jpg",
+          "imagenes/cabalgata3.jpg"
         ]
       },
 
       bordados: {
         titulo: "Bordados artesanales",
-        descripcion: "Descubre el arte y la tradición de nuestros bordados.",
         fotos: [
-          {
-            src: "imagenes/bordados1.jpg",
-            alt: "Bordado artesanal 1"
-          },
-          {
-            src: "imagenes/bordados2.jpg",
-            alt: "Bordado artesanal 2"
-          },
-          {
-            src: "imagenes/bordados3.jpg",
-            alt: "Bordado artesanal 3"
-          }
+          "imagenes/bordados1.jpg",
+          "imagenes/bordados2.jpg",
+          "imagenes/bordados3.jpg"
         ]
       },
 
       paseos: {
         titulo: "Paseos por la comunidad",
-        descripcion: "Descubre La Laguna Roja y los paisajes de Zuleta.",
         fotos: [
-          {
-            /* FOTO CORREGIDA: archivo en la raíz de GitHub */
-            src: "Laguna%20Roja%20de%20Zuleta.png",
-            alt: "La Laguna Roja de Zuleta"
-          },
-          {
-            src: "imagenes/paisaje-zuleta.jpg",
-            alt: "Paisajes de Zuleta"
-          },
-          {
-            src: "imagenes/paseo-zuleta.jpg",
-            alt: "Paseo por la comunidad de Zuleta"
-          }
+          "Laguna%20Roja%20de%20Zuleta.png",
+          "imagenes/paisaje-zuleta.jpg",
+          "imagenes/paseo-zuleta.jpg"
         ]
       }
     };
 
-    function mostrarGaleria(servicio) {
-      const galeria = galerias[servicio];
+    let fotosActuales = [];
+    let indiceActual = 0;
+    let elementoAnterior = null;
 
-      if (!galeria) return;
+    // CREAR LAS GALERÍAS EN LA PÁGINA
 
-      document.getElementById("tituloGaleria").textContent =
-        galeria.titulo;
+    function crearGalerias() {
+      const contenedor = document.getElementById("galerias");
 
-      document.getElementById("descripcionGaleria").textContent =
-        galeria.descripcion;
+      Object.entries(galerias).forEach(([clave, grupo]) => {
+        const seccion = document.createElement("div");
+        seccion.className = "galeria-grupo";
 
-      const contenedor = document.getElementById("contenedorFotos");
-      contenedor.replaceChildren();
+        const titulo = document.createElement("div");
+        titulo.className = "galeria-titulo";
 
-      galeria.fotos.forEach(function(foto) {
-        const tarjeta = document.createElement("div");
-        tarjeta.className = "foto-item";
+        const h3 = document.createElement("h3");
+        h3.textContent = grupo.titulo;
 
-        const imagen = document.createElement("img");
-        imagen.src = foto.src;
-        imagen.alt = foto.alt;
-        imagen.loading = "lazy";
+        const texto = document.createElement("span");
+        texto.textContent = grupo.fotos.length + " fotografías";
 
-        imagen.onerror = function() {
-          tarjeta.replaceChildren();
+        titulo.append(h3, texto);
 
-          const mensaje = document.createElement("p");
-          mensaje.className = "mensaje-error";
-          mensaje.textContent =
-            "No se encontró la fotografía. Verifica el nombre del archivo y su ubicación en GitHub.";
+        const mosaico = document.createElement("div");
+        mosaico.className = "mosaico";
 
-          tarjeta.appendChild(mensaje);
-        };
+        grupo.fotos.forEach((ruta, indice) => {
+          const tarjeta = document.createElement("div");
+          tarjeta.className = "foto";
+          tarjeta.tabIndex = 0;
+          tarjeta.setAttribute("role", "button");
+          tarjeta.setAttribute(
+            "aria-label",
+            "Ampliar fotografía " + (indice + 1) + " de " + grupo.titulo
+          );
 
-        const texto = document.createElement("p");
-        texto.textContent = foto.alt;
+          const imagen = document.createElement("img");
+          imagen.src = ruta;
+          imagen.alt = grupo.titulo + " - fotografía " + (indice + 1);
+          imagen.loading = "lazy";
 
-        tarjeta.appendChild(imagen);
-        tarjeta.appendChild(texto);
-        contenedor.appendChild(tarjeta);
-      });
+          imagen.onerror = function() {
+            tarjeta.style.display = "none";
+          };
 
-      const seccion = document.getElementById("galeria");
-      seccion.classList.add("visible");
-      seccion.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+          tarjeta.appendChild(imagen);
+
+          tarjeta.addEventListener("click", () => {
+            mostrarGaleria(clave, indice);
+          });
+
+          tarjeta.addEventListener("keydown", (evento) => {
+            if (evento.key === "Enter" || evento.key === " ") {
+              evento.preventDefault();
+              mostrarGaleria(clave, indice);
+            }
+          });
+
+          mosaico.appendChild(tarjeta);
+        });
+
+        seccion.append(titulo, mosaico);
+        contenedor.appendChild(seccion);
       });
     }
+
+    // ABRIR GALERÍA
+
+    function mostrarGaleria(servicio, indice = 0) {
+      if (!galerias[servicio]) return;
+
+      elementoAnterior = document.activeElement;
+      fotosActuales = galerias[servicio].fotos;
+      indiceActual = indice;
+
+      document.getElementById("visor").classList.add("activo");
+      document.body.style.overflow = "hidden";
+
+      actualizarFoto();
+
+      document.querySelector(".cerrar").focus();
+    }
+
+    // ACTUALIZAR FOTO
+
+    function actualizarFoto() {
+      const imagen = document.getElementById("fotoAmpliada");
+
+      imagen.src = fotosActuales[indiceActual];
+      imagen.alt = "Fotografía " + (indiceActual + 1);
+
+      document.getElementById("contador").textContent =
+        (indiceActual + 1) + " / " + fotosActuales.length;
+    }
+
+    // CAMBIAR FOTO
+
+    function cambiarFoto(direccion) {
+      if (!fotosActuales.length) return;
+
+      indiceActual += direccion;
+
+      if (indiceActual >= fotosActuales.length) {
+        indiceActual = 0;
+      }
+
+      if (indiceActual < 0) {
+        indiceActual = fotosActuales.length - 1;
+      }
+
+      actualizarFoto();
+    }
+
+    // CERRAR GALERÍA
 
     function cerrarGaleria() {
-      document.getElementById("galeria").classList.remove("visible");
-    }
+      document.getElementById("visor").classList.remove("activo");
+      document.body.style.overflow = "";
 
-    function activarConTeclado(evento, servicio) {
-      if (evento.key === "Enter" || evento.key === " ") {
-        evento.preventDefault();
-        mostrarGaleria(servicio);
+      if (elementoAnterior) {
+        elementoAnterior.focus();
       }
     }
+
+    // CONTROLES DEL TECLADO
+
+    document.addEventListener("keydown", function(evento) {
+      const visor = document.getElementById("visor");
+
+      if (!visor.classList.contains("activo")) return;
+
+      if (evento.key === "Escape") {
+        cerrarGaleria();
+      }
+
+      if (evento.key === "ArrowRight") {
+        cambiarFoto(1);
+      }
+
+      if (evento.key === "ArrowLeft") {
+        cambiarFoto(-1);
+      }
+    });
+
+    // CERRAR AL HACER CLIC FUERA DE LA FOTO
+
+    document.getElementById("visor").addEventListener("click", function(evento) {
+      if (evento.target === this) {
+        cerrarGaleria();
+      }
+    });
+
+    // INICIAR GALERÍAS
+
+    crearGalerias();
   </script>
 
 </body>
