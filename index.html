@@ -87,7 +87,7 @@
       background: #1da851;
     }
 
-    h2.titulo {
+    .titulo {
       color: #386641;
       font-size: 28px;
       margin-bottom: 15px;
@@ -123,7 +123,7 @@
       outline: 2px solid #386641;
     }
 
-    .tarjeta .emoji {
+    .emoji {
       display: block;
       font-size: 42px;
       margin-bottom: 12px;
@@ -144,7 +144,7 @@
       font-size: 14px;
     }
 
-    /* GALERÍA DE FOTOGRAFÍAS */
+    /* GALERÍA */
 
     .galeria {
       display: none;
@@ -191,6 +191,12 @@
       padding: 12px;
       font-weight: bold;
       color: #386641;
+    }
+
+    .mensaje-error {
+      padding: 20px;
+      color: #9b2226;
+      font-weight: normal !important;
     }
 
     .cerrar {
@@ -292,9 +298,7 @@
 
     <div class="servicios">
 
-      <div class="tarjeta"
-           role="button"
-           tabindex="0"
+      <div class="tarjeta" role="button" tabindex="0"
            onclick="mostrarGaleria('hospedaje')"
            onkeydown="activarConTeclado(event, 'hospedaje')">
         <span class="emoji">🏡</span>
@@ -302,9 +306,7 @@
         <p>Disfruta de tranquilidad y descanso rodeado de naturaleza.</p>
       </div>
 
-      <div class="tarjeta"
-           role="button"
-           tabindex="0"
+      <div class="tarjeta" role="button" tabindex="0"
            onclick="mostrarGaleria('cabalgatas')"
            onkeydown="activarConTeclado(event, 'cabalgatas')">
         <span class="emoji">🐎</span>
@@ -312,9 +314,7 @@
         <p>Explora los paisajes andinos y vive una aventura diferente.</p>
       </div>
 
-      <div class="tarjeta"
-           role="button"
-           tabindex="0"
+      <div class="tarjeta" role="button" tabindex="0"
            onclick="mostrarGaleria('bordados')"
            onkeydown="activarConTeclado(event, 'bordados')">
         <span class="emoji">🧵</span>
@@ -322,9 +322,7 @@
         <p>Conoce los bordados que representan nuestra cultura y tradición.</p>
       </div>
 
-      <div class="tarjeta"
-           role="button"
-           tabindex="0"
+      <div class="tarjeta" role="button" tabindex="0"
            onclick="mostrarGaleria('paseos')"
            onkeydown="activarConTeclado(event, 'paseos')">
         <span class="emoji">🌄</span>
@@ -334,7 +332,9 @@
 
     </div>
 
-    <p class="indicacion">Selecciona un servicio para ver sus fotografías.</p>
+    <p class="indicacion">
+      Selecciona un servicio para ver sus fotografías.
+    </p>
   </section>
 
   <!-- GALERÍA -->
@@ -382,7 +382,7 @@
     <p>Descanso, aventura, cultura y tradición.</p>
   </footer>
 
-  <!-- CÓDIGO PARA ABRIR LAS FOTOGRAFÍAS -->
+  <!-- JAVASCRIPT DE LAS GALERÍAS -->
   <script>
     const galerias = {
       hospedaje: {
@@ -447,6 +447,7 @@
         descripcion: "Descubre La Laguna Roja y los paisajes de Zuleta.",
         fotos: [
           {
+            /* FOTO CORREGIDA: archivo en la raíz de GitHub */
             src: "Laguna%20Roja%20de%20Zuleta.png",
             alt: "La Laguna Roja de Zuleta"
           },
@@ -486,10 +487,13 @@
         imagen.loading = "lazy";
 
         imagen.onerror = function() {
-          tarjeta.innerHTML = "";
+          tarjeta.replaceChildren();
+
           const mensaje = document.createElement("p");
+          mensaje.className = "mensaje-error";
           mensaje.textContent =
-            "No se encontró esta foto. Verifica el nombre y la carpeta en GitHub.";
+            "No se encontró la fotografía. Verifica el nombre del archivo y su ubicación en GitHub.";
+
           tarjeta.appendChild(mensaje);
         };
 
@@ -503,7 +507,10 @@
 
       const seccion = document.getElementById("galeria");
       seccion.classList.add("visible");
-      seccion.scrollIntoView({ behavior: "smooth", block: "start" });
+      seccion.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     }
 
     function cerrarGaleria() {
