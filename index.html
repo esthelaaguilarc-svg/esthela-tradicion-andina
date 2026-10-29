@@ -47,6 +47,10 @@
       display: inline-block;
     }
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .portada {
       background: linear-gradient(135deg, #e9d5ae, #f8edda);
       text-align: center;
@@ -73,6 +77,12 @@
       border-radius: 8px;
       margin-top: 10px;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .boton:hover {
+      background: #5c3020;
     }
 
     section {
@@ -99,6 +109,17 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 3px 12px #00000012;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .tarjeta:hover,
+    .tarjeta:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px #00000020;
+      border-color: #8b9a75;
+      outline: none;
     }
 
     .tarjeta .icono {
@@ -109,6 +130,67 @@
     .tarjeta h3 {
       color: #7b432b;
       margin-bottom: 10px;
+    }
+
+    /* Galería de fotografías */
+    .galeria {
+      display: none;
+      padding: 35px 20px;
+      background: #f2eadb;
+      border-top: 3px solid #354d35;
+      text-align: center;
+    }
+
+    .galeria.activa {
+      display: block;
+    }
+
+    .galeria h2 {
+      color: #354d35;
+      margin-bottom: 10px;
+    }
+
+    .galeria p {
+      margin-bottom: 15px;
+    }
+
+    .fotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      max-width: 1050px;
+      margin: 25px auto;
+    }
+
+    .foto-item {
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+
+    .fotos img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .foto-error {
+      display: flex;
+      min-height: 180px;
+      padding: 15px;
+      align-items: center;
+      justify-content: center;
+      background: #eee6d8;
+      color: #654a36;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .cerrar {
+      background: #354d35;
     }
 
     .ubicacion {
@@ -133,6 +215,15 @@
 
       nav a {
         margin: 5px;
+      }
+
+      .fotos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .fotos img {
+        height: 160px;
       }
     }
   </style>
@@ -166,33 +257,54 @@
 
     <section id="servicios">
       <h2>Nuestros servicios</h2>
-      <p>Disfruta de la naturaleza y conoce las tradiciones de nuestra comunidad.</p>
+      <p>Haz clic en el servicio que deseas conocer y mira sus fotografías.</p>
 
       <div class="servicios">
-        <article class="tarjeta">
+        <article class="tarjeta" role="button" tabindex="0"
+          onclick="mostrarGaleria('hospedaje')"
+          onkeydown="activarConTeclado(event, 'hospedaje')">
           <div class="icono">🏡</div>
           <h3>Hospedaje en cabañas</h3>
           <p>Descansa en un ambiente acogedor rodeado de naturaleza y tranquilidad.</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta" role="button" tabindex="0"
+          onclick="mostrarGaleria('cabalgatas')"
+          onkeydown="activarConTeclado(event, 'cabalgatas')">
           <div class="icono">🐎</div>
           <h3>Cabalgatas</h3>
           <p>Disfruta de paseos a caballo y contempla los paisajes andinos.</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta" role="button" tabindex="0"
+          onclick="mostrarGaleria('bordados')"
+          onkeydown="activarConTeclado(event, 'bordados')">
           <div class="icono">🧵</div>
           <h3>Bordados artesanales</h3>
           <p>Conoce y adquiere bordados que conservan la tradición artesanal de Zuleta.</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta" role="button" tabindex="0"
+          onclick="mostrarGaleria('paseos')"
+          onkeydown="activarConTeclado(event, 'paseos')">
           <div class="icono">🌄</div>
           <h3>Paseos por la comunidad</h3>
           <p>Explora la comunidad, sus paisajes, cultura y costumbres.</p>
         </article>
       </div>
+    </section>
+
+    <!-- Las fotografías seleccionadas aparecen aquí -->
+    <section id="galeria" class="galeria" aria-live="polite">
+      <h2 id="tituloGaleria">Nuestras fotografías</h2>
+      <p id="descripcionGaleria"></p>
+
+      <div id="contenedorFotos" class="fotos"></div>
+
+      <button class="boton cerrar" type="button"
+        onclick="cerrarGaleria()">
+        Cerrar fotografías
+      </button>
     </section>
 
     <section id="nosotros">
@@ -223,5 +335,107 @@
     <p>Zuleta, Imbabura, Ecuador</p>
     <p>© 2026 | Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    /*
+      Las rutas de las fotografías deben coincidir con los nombres
+      de los archivos que subas a la carpeta "imagenes" de GitHub.
+    */
+    const galerias = {
+      hospedaje: {
+        titulo: "Hospedaje en cabañas",
+        descripcion: "Conoce nuestros espacios de descanso.",
+        fotos: [
+          "imagenes/cabana1.jpg",
+          "imagenes/cabana2.jpg",
+          "imagenes/cabana3.jpg"
+        ]
+      },
+
+      cabalgatas: {
+        titulo: "Cabalgatas",
+        descripcion: "Disfruta de los paisajes andinos a caballo.",
+        fotos: [
+          "imagenes/cabalgata1.jpg",
+          "imagenes/cabalgata2.jpg",
+          "imagenes/cabalgata3.jpg"
+        ]
+      },
+
+      bordados: {
+        titulo: "Bordados artesanales",
+        descripcion: "Descubre los bordados tradicionales de Zuleta.",
+        fotos: [
+          "imagenes/bordados1.jpg",
+          "imagenes/bordados2.jpg",
+          "imagenes/bordados3.jpg"
+        ]
+      },
+
+      paseos: {
+        titulo: "Paseos por la comunidad",
+        descripcion: "Explora la Laguna Roja y los paisajes de Zuleta.",
+        fotos: [
+          "imagenes/laguna-roja.jpg",
+          "imagenes/paisaje-zuleta.jpg",
+          "imagenes/paseo-zuleta.jpg"
+        ]
+      }
+    };
+
+    function mostrarGaleria(servicio) {
+      const datos = galerias[servicio];
+
+      if (!datos) return;
+
+      document.getElementById("tituloGaleria").textContent = datos.titulo;
+      document.getElementById("descripcionGaleria").textContent =
+        datos.descripcion;
+
+      const contenedor = document.getElementById("contenedorFotos");
+      contenedor.replaceChildren();
+
+      datos.fotos.forEach(function(ruta) {
+        const tarjetaFoto = document.createElement("div");
+        tarjetaFoto.className = "foto-item";
+
+        const imagen = document.createElement("img");
+        imagen.src = ruta;
+        imagen.alt = datos.titulo;
+        imagen.loading = "lazy";
+
+        imagen.onerror = function() {
+          const aviso = document.createElement("div");
+          aviso.className = "foto-error";
+          aviso.textContent =
+            "No se encontró esta foto: " + ruta +
+            ". Revisa que el archivo esté en la carpeta imagenes.";
+
+          imagen.replaceWith(aviso);
+        };
+
+        tarjetaFoto.appendChild(imagen);
+        contenedor.appendChild(tarjetaFoto);
+      });
+
+      const galeria = document.getElementById("galeria");
+      galeria.classList.add("activa");
+      galeria.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function cerrarGaleria() {
+      document.getElementById("galeria").classList.remove("activa");
+    }
+
+    function activarConTeclado(evento, servicio) {
+      if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        mostrarGaleria(servicio);
+      }
+    }
+  </script>
 </body>
 </html>
