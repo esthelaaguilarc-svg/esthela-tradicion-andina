@@ -3,287 +3,368 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#243d2d">
 
   <title>Esthela Aguilar | Tradición Andina</title>
-
-  <meta name="description" content="Descubre Zuleta, disfruta de hospedaje en cabañas, cabalgatas, bordados artesanales y paseos por la comunidad.">
+  <meta name="description" content="Descubre Zuleta, Imbabura. Hospedaje en cabañas, cabalgatas, bordados artesanales y experiencias culturales en los Andes del Ecuador.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --verde: #405b43;
-      --verde-oscuro: #293d2e;
-      --beige: #f5f0e6;
-      --crema: #fffdf8;
-      --tierra: #a87953;
-      --texto: #393b34;
-      --blanco: #ffffff;
+      --verde: #263f2e;
+      --verde-claro: #47674b;
+      --crema: #f8f5ed;
+      --dorado: #c8a66a;
+      --texto: #29342b;
+      --blanco: #fff;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--crema);
       color: var(--texto);
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
 
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+      line-height: 1.2;
     }
 
-    a {
-      text-decoration: none;
-    }
-
-    /* MENÚ */
-
-    header {
-      background: rgba(255, 253, 248, 0.96);
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+    .barra {
       position: sticky;
       top: 0;
-      z-index: 20;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+      z-index: 100;
+      background: rgba(38, 63, 46, .97);
+      color: white;
+      box-shadow: 0 3px 18px #0002;
     }
 
-    .logo {
-      color: var(--verde);
+    .navegacion {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .marca {
       font-family: 'Playfair Display', serif;
-      font-size: 25px;
+      font-size: 21px;
       font-weight: 700;
+      line-height: 1.2;
     }
 
-    .logo span {
+    .marca span {
       display: block;
+      color: var(--dorado);
       font-family: 'DM Sans', sans-serif;
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--tierra);
-      font-weight: 600;
+      margin-top: 5px;
     }
 
-    nav {
+    .menu {
       display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--texto);
-      font-size: 14px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--tierra);
-    }
-
-    /* PORTADA */
-
-    .hero {
-      min-height: 590px;
-      display: flex;
+      gap: 22px;
       align-items: center;
-      padding: 80px 8%;
-      color: white;
-      background:
-        linear-gradient(90deg, rgba(24, 42, 29, 0.82), rgba(24, 42, 29, 0.15)),
-        url("imagenes/portada-zuleta.jpg") center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .hero .subtitulo {
-      color: #e8d5b8;
-      text-transform: uppercase;
-      letter-spacing: 4px;
       font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
     }
 
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.12;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 530px;
-      margin-bottom: 30px;
+    .menu a:hover {
+      color: #e4c58e;
     }
 
     .boton {
-      display: inline-block;
-      background: var(--tierra);
-      color: white;
-      padding: 14px 27px;
-      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-size: 13px;
       font-weight: 700;
-      transition: 0.3s;
+      transition: transform .25s, background .25s;
+      cursor: pointer;
+      border: 0;
     }
 
     .boton:hover {
-      background: var(--verde);
       transform: translateY(-3px);
     }
 
-    /* SECCIONES */
+    .boton-dorado {
+      background: var(--dorado);
+      color: #203526;
+    }
 
-    section {
-      padding: 85px 7%;
+    .boton-verde {
+      background: var(--verde);
+      color: white;
+    }
+
+    .portada {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(17, 37, 25, .83), rgba(17, 37, 25, .32)),
+        url('imagenes/portada-zuleta.jpg') center/cover no-repeat,
+        #526c4c;
+    }
+
+    .portada-contenido {
+      max-width: 1200px;
+      width: 100%;
+      padding: 100px 7%;
+      margin: auto;
+      animation: aparecer 1s ease-out;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      color: #f0d5a0;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .portada h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 7vw, 82px);
+      margin-bottom: 22px;
+    }
+
+    .portada h1 em {
+      color: #e2c38b;
+      font-weight: 500;
+    }
+
+    .portada p {
+      max-width: 550px;
+      font-size: 17px;
+      color: #f0f0e8;
+      margin-bottom: 32px;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .boton-borde {
+      color: white;
+      border: 1px solid #ffffffa6;
+      background: #ffffff12;
+    }
+
+    .franja {
+      background: var(--dorado);
+      padding: 18px 5%;
+      text-align: center;
+      color: #263b2b;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .seccion {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 5%;
     }
 
     .encabezado {
-      text-align: center;
-      max-width: 700px;
+      max-width: 680px;
       margin: 0 auto 45px;
+      text-align: center;
     }
 
-    .encabezado span {
-      color: var(--tierra);
-      text-transform: uppercase;
+    .subtitulo {
+      color: #8d7449;
+      font-size: 11px;
       letter-spacing: 3px;
-      font-size: 12px;
       font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
     .encabezado h2 {
-      color: var(--verde-oscuro);
-      font-size: clamp(30px, 4vw, 43px);
-      margin: 10px 0;
+      color: var(--verde);
+      font-size: clamp(32px, 4vw, 47px);
+      margin-bottom: 15px;
     }
 
     .encabezado p {
-      color: #77766d;
+      color: #6b7168;
+      font-size: 15px;
     }
 
-    /* SERVICIOS */
-
-    #servicios {
-      background: var(--beige);
-    }
-
-    .servicios-grid {
+    .servicios {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 23px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .servicio {
+    .tarjeta {
       background: white;
-      border-radius: 15px;
+      border-radius: 9px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      cursor: pointer;
-      transition: 0.35s;
+      box-shadow: 0 8px 28px #263f2e0b;
+      transition: transform .3s, box-shadow .3s;
     }
 
-    .servicio:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    .tarjeta:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px #263f2e1b;
     }
 
-    .servicio img {
-      width: 100%;
+    .tarjeta img {
       height: 230px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s;
+      transition: transform .5s;
     }
 
-    .servicio:hover img {
+    .tarjeta:hover img {
       transform: scale(1.04);
     }
 
-    .servicio-info {
-      padding: 22px;
+    .tarjeta-imagen {
+      overflow: hidden;
+      background: #dce1d5;
     }
 
-    .servicio-info h3 {
-      font-size: 21px;
+    .tarjeta-contenido {
+      padding: 23px;
+    }
+
+    .tarjeta h3 {
       color: var(--verde);
-      margin-bottom: 8px;
+      font-size: 23px;
+      margin-bottom: 10px;
     }
 
-    .servicio-info p {
-      color: #77766d;
-      font-size: 14px;
-      margin-bottom: 14px;
+    .tarjeta p {
+      color: #70756c;
+      font-size: 13px;
+      margin-bottom: 18px;
     }
 
-    .ver-mas {
-      color: var(--tierra);
+    .enlace {
+      color: #81643a;
+      font-size: 12px;
       font-weight: 700;
-      font-size: 13px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
     }
 
-    /* GALERÍA */
-
-    #galeria {
-      background: var(--crema);
+    .enlace:hover {
+      color: var(--verde-claro);
     }
 
-    .galeria-grupo {
-      margin-bottom: 65px;
+    .experiencia {
+      background: #eae9dc;
     }
 
-    .galeria-titulo {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 22px;
-      border-bottom: 1px solid #e6dfd2;
-      padding-bottom: 13px;
-    }
-
-    .galeria-titulo h3 {
-      color: var(--verde);
-      font-size: 27px;
-    }
-
-    .galeria-titulo span {
-      color: var(--tierra);
-      font-size: 13px;
-    }
-
-    .mosaico {
+    .experiencia-interior {
+      max-width: 1200px;
+      margin: auto;
+      padding: 85px 5%;
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      grid-template-rows: 190px 190px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .experiencia-foto img {
+      height: 470px;
+      border-radius: 8px;
+    }
+
+    .experiencia-texto h2 {
+      font-size: clamp(34px, 4vw, 49px);
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+
+    .experiencia-texto p {
+      color: #60695e;
+      margin-bottom: 17px;
+    }
+
+    .detalle {
+      display: flex;
       gap: 12px;
+      margin: 20px 0;
+      align-items: flex-start;
+    }
+
+    .detalle-icono {
+      background: white;
+      color: #81643a;
+      min-width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+    }
+
+    .detalle strong {
+      display: block;
+      color: var(--verde);
+    }
+
+    .detalle small {
+      color: #6e756b;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 14px;
     }
 
     .foto {
       position: relative;
       overflow: hidden;
-      border-radius: 12px;
-      cursor: pointer;
-      background: #e9e2d5;
+      border-radius: 7px;
+      background: #dce1d5;
     }
 
     .foto:first-child {
@@ -291,11 +372,9 @@
     }
 
     .foto img {
-      width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s;
+      cursor: pointer;
+      transition: transform .5s;
     }
 
     .foto:hover img {
@@ -303,209 +382,181 @@
     }
 
     .foto::after {
-      content: "Ver fotografía";
+      content: 'Ver fotografía ↗';
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 30px 15px 14px;
+      padding: 30px 15px 15px;
       color: white;
+      font-size: 12px;
+      background: linear-gradient(transparent, #0008);
+      pointer-events: none;
+    }
+
+    .contacto {
+      text-align: center;
+      padding: 90px 5%;
+      color: white;
+      background:
+        linear-gradient(#203d2de8, #203d2df0),
+        url('imagenes/paisaje-zuleta.jpg') center/cover no-repeat,
+        #263f2e;
+    }
+
+    .contacto .subtitulo {
+      color: #e4c58e;
+    }
+
+    .contacto h2 {
+      max-width: 700px;
+      margin: 0 auto 18px;
+      font-size: clamp(35px, 5vw, 56px);
+    }
+
+    .contacto p {
+      color: #e2e7df;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .datos {
+      margin-top: 35px;
       font-size: 13px;
-      font-weight: 600;
-      background: linear-gradient(transparent, rgba(0,0,0,0.6));
-      opacity: 0;
-      transition: 0.3s;
+      color: #e0e7dc;
     }
-
-    .foto:hover::after,
-    .foto:focus-visible::after {
-      opacity: 1;
-    }
-
-    .foto:focus-visible {
-      outline: 3px solid var(--tierra);
-      outline-offset: 3px;
-    }
-
-    /* NOSOTROS */
-
-    #nosotros {
-      background: var(--beige);
-    }
-
-    .nosotros-contenido {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .nosotros-contenido h2 {
-      color: var(--verde);
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-
-    .nosotros-contenido p {
-      font-size: 17px;
-      color: #66665d;
-    }
-
-    /* CONTACTO */
-
-    #contacto {
-      text-align: center;
-      background: var(--verde-oscuro);
-      color: white;
-    }
-
-    #contacto h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    #contacto p {
-      margin-bottom: 25px;
-    }
-
-    /* PIE DE PÁGINA */
 
     footer {
-      background: #202d23;
-      color: #ddd9ce;
+      background: #192c20;
+      color: #d8dfd4;
+      padding: 27px 5%;
       text-align: center;
-      padding: 25px 15px;
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    /* BOTÓN FLOTANTE WHATSAPP */
+    footer strong {
+      color: #e2c38b;
+    }
 
-    .whatsapp {
+    .whatsapp-flotante {
       position: fixed;
-      bottom: 23px;
-      right: 23px;
-      background: #25d366;
-      color: white;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
       width: 58px;
       height: 58px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      font-weight: 700;
-      z-index: 30;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      font-size: 29px;
+      box-shadow: 0 5px 20px #0003;
+      transition: transform .2s;
     }
 
-    /* VISOR DE FOTOGRAFÍAS */
+    .whatsapp-flotante:hover {
+      transform: scale(1.1);
+    }
 
-    .visor {
+    .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(12, 18, 13, 0.95);
-      z-index: 100;
+      z-index: 200;
+      background: #101710f2;
+      padding: 25px;
       align-items: center;
       justify-content: center;
-      padding: 65px 70px;
     }
 
-    .visor.activo {
+    .modal.abierto {
       display: flex;
     }
 
-    .visor-contenido {
-      max-width: 1100px;
-      width: 100%;
-      text-align: center;
+    .modal img {
+      max-width: 90vw;
+      max-height: 82vh;
+      width: auto;
+      border-radius: 5px;
     }
 
-    .visor img {
-      max-width: 100%;
-      max-height: 75vh;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .visor-contador {
-      color: white;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .cerrar,
-    .anterior,
-    .siguiente {
+    .cerrar-modal {
       position: absolute;
-      border: none;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      cursor: pointer;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 25px;
-    }
-
-    .cerrar {
       top: 20px;
       right: 25px;
+      color: white;
+      font-size: 35px;
+      background: none;
+      border: 0;
+      cursor: pointer;
     }
 
-    .anterior {
-      left: 18px;
-      top: 50%;
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .siguiente {
-      right: 18px;
-      top: 50%;
-    }
+    @media (max-width: 900px) {
+      .servicios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-    .cerrar:hover,
-    .anterior:hover,
-    .siguiente:hover {
-      background: var(--tierra);
-    }
+      .experiencia-interior {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
 
-    /* RESPONSIVE */
+      .experiencia-foto img {
+        height: 350px;
+      }
 
-    @media (max-width: 950px) {
-      .servicios-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .galeria {
+        grid-template-rows: 180px 180px;
       }
     }
 
-    @media (max-width: 650px) {
-      header {
+    @media (max-width: 600px) {
+      .navegacion {
+        align-items: flex-start;
         flex-direction: column;
+        gap: 12px;
       }
 
-      nav {
-        justify-content: center;
-        gap: 14px;
+      .menu {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px 17px;
+        font-size: 12px;
       }
 
-      .hero {
-        min-height: 490px;
-        padding: 65px 7%;
+      .portada {
+        min-height: 580px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .portada-contenido {
+        padding: 75px 6%;
       }
 
-      section {
-        padding: 65px 6%;
+      .portada p {
+        font-size: 15px;
       }
 
-      .servicios-grid {
+      .seccion {
+        padding: 65px 5%;
+      }
+
+      .servicios {
         grid-template-columns: 1fr;
       }
 
-      .mosaico {
+      .tarjeta img {
+        height: 240px;
+      }
+
+      .galeria {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 150px;
+        grid-template-rows: 230px 160px 160px;
       }
 
       .foto:first-child {
@@ -513,25 +564,20 @@
         grid-row: auto;
       }
 
-      .galeria-titulo {
-        align-items: flex-start;
-        flex-direction: column;
+      .experiencia-interior {
+        padding: 65px 6%;
       }
 
-      .visor {
-        padding: 65px 12px;
+      .acciones .boton {
+        width: 100%;
       }
+    }
 
-      .visor img {
-        max-height: 65vh;
-      }
-
-      .anterior {
-        left: 5px;
-      }
-
-      .siguiente {
-        right: 5px;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -539,379 +585,316 @@
 
 <body>
 
-  <!-- MENÚ PRINCIPAL -->
+  <header class="barra">
+    <nav class="navegacion">
+      <a href="#inicio" class="marca">
+        Esthela Aguilar
+        <span>Tradición Andina</span>
+      </a>
 
-  <header>
-    <a href="#inicio" class="logo">
-      Esthela Aguilar
-      <span>Tradición Andina</span>
-    </a>
-
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#galeria">Galería</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
+      <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </nav>
   </header>
 
-  <!-- PORTADA -->
-
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <div class="subtitulo">Bienvenidos a Zuleta</div>
+    <section class="portada" id="inicio">
+      <div class="portada-contenido">
+        <span class="etiqueta">Zuleta · Imbabura · Ecuador</span>
 
-        <h1>Descanso, aventura, cultura y tradición</h1>
+        <h1>Descubre la magia de la <em>Tradición Andina</em></h1>
 
         <p>
-          Vive una experiencia especial en el corazón de los Andes.
-          Descubre nuestros paisajes, hospedaje, cabalgatas y
-          la riqueza de los bordados artesanales.
+          Descanso, aventura, cultura y tradición.
+          Vive momentos especiales entre montañas, paisajes,
+          bordados artesanales y la calidez de nuestra comunidad.
         </p>
 
-        <a class="boton" href="#servicios">
-          Descubre nuestros servicios
-        </a>
+        <div class="acciones">
+          <a class="boton boton-dorado"
+             href="#servicios">Descubre nuestras experiencias ↗</a>
+
+          <a class="boton boton-borde"
+             href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+             target="_blank" rel="noopener noreferrer">
+            Consultar por WhatsApp
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-
-    <section id="servicios">
-      <div class="encabezado">
-        <span>Nuestras experiencias</span>
-        <h2>Descubre lo que ofrecemos</h2>
-        <p>
-          Disfruta de la naturaleza, la cultura y la hospitalidad
-          de nuestra comunidad.
-        </p>
-      </div>
-
-      <div class="servicios-grid">
-
-        <article class="servicio" onclick="mostrarGaleria('hospedaje')">
-          <img src="imagenes/cabana1.jpg" alt="Hospedaje en cabañas"
-               onerror="this.style.visibility='hidden'">
-          <div class="servicio-info">
-            <h3>Hospedaje en cabañas</h3>
-            <p>Un espacio acogedor para descansar y disfrutar de la naturaleza.</p>
-            <span class="ver-mas">Ver fotografías →</span>
-          </div>
-        </article>
-
-        <article class="servicio" onclick="mostrarGaleria('cabalgatas')">
-          <img src="imagenes/cabalgata1.jpg" alt="Cabalgatas en Zuleta"
-               onerror="this.style.visibility='hidden'">
-          <div class="servicio-info">
-            <h3>Cabalgatas</h3>
-            <p>Recorre los paisajes andinos y disfruta de una aventura especial.</p>
-            <span class="ver-mas">Ver fotografías →</span>
-          </div>
-        </article>
-
-        <article class="servicio" onclick="mostrarGaleria('bordados')">
-          <img src="imagenes/bordados1.jpg" alt="Bordados artesanales"
-               onerror="this.style.visibility='hidden'">
-          <div class="servicio-info">
-            <h3>Bordados artesanales</h3>
-            <p>Conoce el arte y los detalles de los bordados tradicionales de Zuleta.</p>
-            <span class="ver-mas">Ver fotografías →</span>
-          </div>
-        </article>
-
-        <article class="servicio" onclick="mostrarGaleria('paseos')">
-          <img src="Laguna%20Roja%20de%20Zuleta.png" alt="Laguna Roja de Zuleta"
-               onerror="this.style.visibility='hidden'">
-          <div class="servicio-info">
-            <h3>Paseos por la comunidad</h3>
-            <p>Explora los paisajes y atractivos naturales de nuestra comunidad.</p>
-            <span class="ver-mas">Ver fotografías →</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- GALERÍA FOTOGRÁFICA -->
-
-    <section id="galeria">
-      <div class="encabezado">
-        <span>Momentos especiales</span>
-        <h2>Galería de fotografías</h2>
-        <p>
-          Una mirada a nuestras experiencias, paisajes y tradiciones.
-          Selecciona una fotografía para ampliarla.
-        </p>
-      </div>
-
-      <div id="galerias"></div>
-    </section>
-
-    <!-- NOSOTROS -->
-
-    <section id="nosotros">
-      <div class="nosotros-contenido">
-        <h2>Tradición, naturaleza y hospitalidad</h2>
-        <p>
-          En Zuleta, sector Pan de Azúcar, te invitamos a disfrutar
-          de una experiencia que une el descanso, la aventura y
-          la cultura andina. Queremos compartir contigo la belleza
-          de nuestra comunidad y sus tradiciones.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-
-    <section id="contacto">
-      <h2>¡Te esperamos en Zuleta!</h2>
-      <p>Comunícate con nosotros para conocer nuestros servicios.</p>
-
-      <a class="boton"
-         href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-         target="_blank" rel="noopener">
-        Contactar por WhatsApp
-      </a>
-    </section>
-
-  </main>
-
-  <!-- PIE DE PÁGINA -->
-
-  <footer>
-    <p>Esthela Aguilar – Tradición Andina</p>
-    <p>Zuleta, sector Pan de Azúcar, Imbabura – Ecuador</p>
-    <p>© 2026 Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- BOTÓN FLOTANTE -->
-
-  <a class="whatsapp"
-     href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
-     target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    W
-  </a>
-
-  <!-- VISOR DE FOTOGRAFÍAS -->
-
-  <div class="visor" id="visor" role="dialog"
-       aria-modal="true" aria-label="Galería de fotografías">
-
-    <button class="cerrar" onclick="cerrarGaleria()"
-            aria-label="Cerrar galería">×</button>
-
-    <button class="anterior" onclick="cambiarFoto(-1)"
-            aria-label="Fotografía anterior">‹</button>
-
-    <div class="visor-contenido">
-      <img id="fotoAmpliada" src="" alt="Fotografía ampliada">
-      <div class="visor-contador" id="contador"></div>
+    <div class="franja">
+      Naturaleza · Cultura · Artesanía · Hospitalidad
     </div>
 
-    <button class="siguiente" onclick="cambiarFoto(1)"
-            aria-label="Fotografía siguiente">›</button>
+    <section class="seccion" id="servicios">
+      <div class="encabezado">
+        <div class="subtitulo">Vive una experiencia diferente</div>
+        <h2>Descubre todo lo que tenemos para ti</h2>
+        <p>
+          Conoce la belleza de Zuleta y disfruta de experiencias
+          que conectan con la naturaleza y las tradiciones de nuestra tierra.
+        </p>
+      </div>
+
+      <div class="servicios">
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="imagenes/cabana1.jpg"
+                 alt="Cabañas para hospedaje en Zuleta"
+                 loading="lazy">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Hospedaje</h3>
+            <p>Descansa y disfruta de la tranquilidad de los Andes en un ambiente acogedor.</p>
+            <a class="enlace"
+               href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20el%20hospedaje"
+               target="_blank" rel="noopener noreferrer">CONSULTAR HOSPEDAJE ↗</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="imagenes/cabalgata1.jpg"
+                 alt="Experiencias de cabalgata"
+                 loading="lazy">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Cabalgatas</h3>
+            <p>Recorre senderos y contempla los hermosos paisajes de nuestra comunidad.</p>
+            <a class="enlace"
+               href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20las%20cabalgatas"
+               target="_blank" rel="noopener noreferrer">CONSULTAR CABALGATAS ↗</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="imagenes/bordados1.jpg"
+                 alt="Bordados artesanales de Zuleta"
+                 loading="lazy">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Bordados artesanales</h3>
+            <p>Admira y descubre el arte, los colores y el trabajo de nuestras bordadoras.</p>
+            <a class="enlace"
+               href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20los%20bordados"
+               target="_blank" rel="noopener noreferrer">VER ARTESANÍAS ↗</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="imagenes/paisaje-zuleta.jpg"
+                 alt="Paisajes y paseos por Zuleta"
+                 loading="lazy">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Paseos por Zuleta</h3>
+            <p>Explora los paisajes, rincones y atractivos de nuestra comunidad andina.</p>
+            <a class="enlace"
+               href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20los%20paseos"
+               target="_blank" rel="noopener noreferrer">PLANIFICAR MI PASEO ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="experiencia" id="nosotros">
+      <div class="experiencia-interior">
+        <div class="experiencia-foto">
+          <img src="imagenes/cabana2.jpg"
+               alt="Experiencia de descanso en Zuleta"
+               loading="lazy">
+        </div>
+
+        <div class="experiencia-texto">
+          <div class="subtitulo">Nuestra esencia</div>
+          <h2>Un lugar para conectar con lo auténtico</h2>
+
+          <p>
+            En Zuleta, cada paisaje cuenta una historia y cada tradición
+            conserva la esencia de nuestra cultura andina.
+          </p>
+
+          <p>
+            Queremos compartir contigo la tranquilidad de nuestra tierra,
+            la belleza de sus montañas y el valor de las artesanías
+            elaboradas con dedicación.
+          </p>
+
+          <div class="detalle">
+            <div class="detalle-icono">⌂</div>
+            <div>
+              <strong>Descanso y hospitalidad</strong>
+              <small>Un espacio para disfrutar de la tranquilidad del campo.</small>
+            </div>
+          </div>
+
+          <div class="detalle">
+            <div class="detalle-icono">✿</div>
+            <div>
+              <strong>Cultura y tradición</strong>
+              <small>Conoce el arte de los bordados y las costumbres locales.</small>
+            </div>
+          </div>
+
+          <div class="detalle">
+            <div class="detalle-icono">⌁</div>
+            <div>
+              <strong>Naturaleza y aventura</strong>
+              <small>Disfruta de paisajes andinos y paseos por la comunidad.</small>
+            </div>
+          </div>
+
+          <a class="boton boton-verde"
+             href="https://wa.me/593986222426?text=Hola%2C%20quiero%20conocer%20sus%20experiencias"
+             target="_blank" rel="noopener noreferrer">
+            Conversemos por WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="galeria">
+      <div class="encabezado">
+        <div class="subtitulo">Postales de nuestra tierra</div>
+        <h2>Zuleta te espera</h2>
+        <p>
+          Un vistazo a los espacios, paisajes y tradiciones
+          que hacen especial esta experiencia.
+        </p>
+      </div>
+
+      <div class="galeria">
+        <div class="foto">
+          <img src="imagenes/portada-zuleta.jpg"
+               alt="Paisaje de Zuleta"
+               loading="lazy"
+               onclick="abrirFoto(this)">
+        </div>
+
+        <div class="foto">
+          <img src="imagenes/cabana3.jpg"
+               alt="Espacio de hospedaje"
+               loading="lazy"
+               onclick="abrirFoto(this)">
+        </div>
+
+        <div class="foto">
+          <img src="imagenes/cabalgata2.jpg"
+               alt="Cabalgata por los Andes"
+               loading="lazy"
+               onclick="abrirFoto(this)">
+        </div>
+
+        <div class="foto">
+          <img src="imagenes/bordados2.jpg"
+               alt="Detalles de bordados"
+               loading="lazy"
+               onclick="abrirFoto(this)">
+        </div>
+
+        <div class="foto">
+          <img src="imagenes/paseo-zuleta.jpg"
+               alt="Paseos por la comunidad"
+               loading="lazy"
+               onclick="abrirFoto(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="subtitulo">Tu próxima aventura comienza aquí</div>
+      <h2>Ven a descubrir la magia de Zuleta</h2>
+      <p>
+        Escríbenos para consultar sobre hospedaje, cabalgatas,
+        bordados artesanales y paseos por nuestra comunidad.
+        ¡Será un gusto atenderte!
+      </p>
+
+      <a class="boton boton-dorado"
+         href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+         target="_blank" rel="noopener noreferrer">
+        ☎ Escribir por WhatsApp
+      </a>
+
+      <div class="datos">
+        <p>📍 Zuleta, sector Pan de Azúcar, Imbabura, Ecuador</p>
+        <p>📱 098 622 2426</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Esthela Aguilar – Tradición Andina</strong></p>
+    <p>Descanso, aventura, cultura y tradición.</p>
+    <p>© <span id="anio"></span> Todos los derechos reservados.</p>
+  </footer>
+
+  <a class="whatsapp-flotante"
+     href="https://wa.me/593986222426?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">✆</a>
+
+  <div class="modal" id="modalFoto"
+       role="dialog" aria-modal="true"
+       aria-label="Fotografía ampliada"
+       onclick="cerrarFoto(event)">
+    <button class="cerrar-modal"
+            type="button"
+            aria-label="Cerrar fotografía"
+            onclick="cerrarFoto(event)">×</button>
+    <img id="fotoAmpliada" src="" alt="Fotografía ampliada">
   </div>
 
   <script>
-    // FOTOGRAFÍAS DE CADA SERVICIO
-    // Los nombres deben coincidir exactamente con los archivos de GitHub.
+    document.getElementById('anio').textContent =
+      new Date().getFullYear();
 
-    const galerias = {
-      hospedaje: {
-        titulo: "Hospedaje en cabañas",
-        fotos: [
-          "imagenes/cabana1.jpg",
-          "imagenes/cabana2.jpg",
-          "imagenes/cabana3.jpg"
-        ]
-      },
+    function abrirFoto(imagen) {
+      const modal = document.getElementById('modalFoto');
+      document.getElementById('fotoAmpliada').src = imagen.src;
+      document.getElementById('fotoAmpliada').alt = imagen.alt;
+      modal.classList.add('abierto');
+      document.body.style.overflow = 'hidden';
+    }
 
-      cabalgatas: {
-        titulo: "Cabalgatas",
-        fotos: [
-          "imagenes/cabalgata1.jpg",
-          "imagenes/cabalgata2.jpg",
-          "imagenes/cabalgata3.jpg"
-        ]
-      },
-
-      bordados: {
-        titulo: "Bordados artesanales",
-        fotos: [
-          "imagenes/bordados1.jpg",
-          "imagenes/bordados2.jpg",
-          "imagenes/bordados3.jpg"
-        ]
-      },
-
-      paseos: {
-        titulo: "Paseos por la comunidad",
-        fotos: [
-          "Laguna%20Roja%20de%20Zuleta.png",
-          "imagenes/paisaje-zuleta.jpg",
-          "imagenes/paseo-zuleta.jpg"
-        ]
+    function cerrarFoto(event) {
+      if (
+        event.target.id === 'modalFoto' ||
+        event.target.classList.contains('cerrar-modal')
+      ) {
+        document.getElementById('modalFoto').classList.remove('abierto');
+        document.body.style.overflow = '';
       }
-    };
+    }
 
-    let fotosActuales = [];
-    let indiceActual = 0;
-    let elementoAnterior = null;
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.getElementById('modalFoto').classList.remove('abierto');
+        document.body.style.overflow = '';
+      }
+    });
 
-    // CREAR LAS GALERÍAS EN LA PÁGINA
-
-    function crearGalerias() {
-      const contenedor = document.getElementById("galerias");
-
-      Object.entries(galerias).forEach(([clave, grupo]) => {
-        const seccion = document.createElement("div");
-        seccion.className = "galeria-grupo";
-
-        const titulo = document.createElement("div");
-        titulo.className = "galeria-titulo";
-
-        const h3 = document.createElement("h3");
-        h3.textContent = grupo.titulo;
-
-        const texto = document.createElement("span");
-        texto.textContent = grupo.fotos.length + " fotografías";
-
-        titulo.append(h3, texto);
-
-        const mosaico = document.createElement("div");
-        mosaico.className = "mosaico";
-
-        grupo.fotos.forEach((ruta, indice) => {
-          const tarjeta = document.createElement("div");
-          tarjeta.className = "foto";
-          tarjeta.tabIndex = 0;
-          tarjeta.setAttribute("role", "button");
-          tarjeta.setAttribute(
-            "aria-label",
-            "Ampliar fotografía " + (indice + 1) + " de " + grupo.titulo
-          );
-
-          const imagen = document.createElement("img");
-          imagen.src = ruta;
-          imagen.alt = grupo.titulo + " - fotografía " + (indice + 1);
-          imagen.loading = "lazy";
-
-          imagen.onerror = function() {
-            tarjeta.style.display = "none";
-          };
-
-          tarjeta.appendChild(imagen);
-
-          tarjeta.addEventListener("click", () => {
-            mostrarGaleria(clave, indice);
-          });
-
-          tarjeta.addEventListener("keydown", (evento) => {
-            if (evento.key === "Enter" || evento.key === " ") {
-              evento.preventDefault();
-              mostrarGaleria(clave, indice);
-            }
-          });
-
-          mosaico.appendChild(tarjeta);
-        });
-
-        seccion.append(titulo, mosaico);
-        contenedor.appendChild(seccion);
+    // Oculta únicamente las fotografías que todavía no se han subido.
+    document.querySelectorAll('img').forEach(function(imagen) {
+      imagen.addEventListener('error', function() {
+        if (imagen.closest('.tarjeta-imagen')) {
+          imagen.closest('.tarjeta-imagen').style.display = 'none';
+        } else if (imagen.closest('.foto')) {
+          imagen.closest('.foto').style.display = 'none';
+        } else if (imagen.closest('.experiencia-foto')) {
+          imagen.closest('.experiencia-foto').style.display = 'none';
+        }
       });
-    }
-
-    // ABRIR GALERÍA
-
-    function mostrarGaleria(servicio, indice = 0) {
-      if (!galerias[servicio]) return;
-
-      elementoAnterior = document.activeElement;
-      fotosActuales = galerias[servicio].fotos;
-      indiceActual = indice;
-
-      document.getElementById("visor").classList.add("activo");
-      document.body.style.overflow = "hidden";
-
-      actualizarFoto();
-
-      document.querySelector(".cerrar").focus();
-    }
-
-    // ACTUALIZAR FOTO
-
-    function actualizarFoto() {
-      const imagen = document.getElementById("fotoAmpliada");
-
-      imagen.src = fotosActuales[indiceActual];
-      imagen.alt = "Fotografía " + (indiceActual + 1);
-
-      document.getElementById("contador").textContent =
-        (indiceActual + 1) + " / " + fotosActuales.length;
-    }
-
-    // CAMBIAR FOTO
-
-    function cambiarFoto(direccion) {
-      if (!fotosActuales.length) return;
-
-      indiceActual += direccion;
-
-      if (indiceActual >= fotosActuales.length) {
-        indiceActual = 0;
-      }
-
-      if (indiceActual < 0) {
-        indiceActual = fotosActuales.length - 1;
-      }
-
-      actualizarFoto();
-    }
-
-    // CERRAR GALERÍA
-
-    function cerrarGaleria() {
-      document.getElementById("visor").classList.remove("activo");
-      document.body.style.overflow = "";
-
-      if (elementoAnterior) {
-        elementoAnterior.focus();
-      }
-    }
-
-    // CONTROLES DEL TECLADO
-
-    document.addEventListener("keydown", function(evento) {
-      const visor = document.getElementById("visor");
-
-      if (!visor.classList.contains("activo")) return;
-
-      if (evento.key === "Escape") {
-        cerrarGaleria();
-      }
-
-      if (evento.key === "ArrowRight") {
-        cambiarFoto(1);
-      }
-
-      if (evento.key === "ArrowLeft") {
-        cambiarFoto(-1);
-      }
     });
-
-    // CERRAR AL HACER CLIC FUERA DE LA FOTO
-
-    document.getElementById("visor").addEventListener("click", function(evento) {
-      if (evento.target === this) {
-        cerrarGaleria();
-      }
-    });
-
-    // INICIAR GALERÍAS
-
-    crearGalerias();
   </script>
 
 </body>
