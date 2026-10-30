@@ -32,22 +32,30 @@
     </script>
     <style>
         .glass-panel {
-            background: rgba(18, 42, 31, 0.70);
+            background: rgba(18, 42, 31, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
+        /* Ocultar barra de desplazamiento por defecto para mantener estética limpia */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body class="text-white font-sans antialiased h-screen overflow-hidden flex flex-col p-4 md:p-6 justify-between relative">
+<body class="text-white font-sans antialiased h-screen overflow-hidden flex flex-col justify-between p-4 md:p-8 relative">
 
-    <!-- Fondo de Pantalla Principal con tu Fotografía PNG -->
+    <!-- Fotografía de Fondo (Tu foto PNG) -->
     <div class="absolute inset-0 z-0">
-        <img src="caballo-zuleta.png" alt="Fondo Zuleta" class="w-full h-full object-cover filter brightness-75 scale-105">
-        <div class="absolute inset-0 bg-zuleta-green/75 backdrop-blur-[2px]"></div>
+        <img src="caballo-zuleta.png" alt="Zuleta Paisaje" class="w-full h-full object-cover filter brightness-75 scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/70 to-black/60"></div>
     </div>
 
-    <!-- Encabezado Superior Compacto -->
+    <!-- Encabezado Superior -->
     <header class="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between shrink-0 mb-4 z-20">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full border border-amber-400/50 text-amber-300 flex items-center justify-center font-serif text-xl font-bold bg-amber-400/10">
@@ -59,88 +67,105 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-4">
-            <span class="hidden lg:inline-block text-xs text-stone-300 font-light">
-                📍 Sector Pan de Azúcar, Zuleta
-            </span>
-            <a href="https://wa.me/593000000000?text=Hola,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="bg-amber-400 hover:bg-amber-300 text-stone-950 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-amber-400/20">
-                Reservar por WhatsApp
-            </a>
-        </div>
+        <a href="https://wa.me/593000000000?text=Hola,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="bg-amber-400 hover:bg-amber-300 text-stone-950 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-amber-400/20">
+            Reservar por WhatsApp
+        </a>
     </header>
 
-    <!-- Mosaico Interactivo en Pantalla Única (Grid Ultra Moderno) -->
-    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 h-full overflow-hidden z-20">
+    <!-- Contenedor Principal con Barra Deslizadora (Slider) -->
+    <main class="relative z-20 my-auto flex flex-col justify-center">
         
-        <!-- Tarjeta 1: Cabalgatas (Con tu fotografía PNG) -->
-        <div onclick="openModal('Cabalgatas a Caballo', 'Explora las montañas y valles de Zuleta a lomo de nuestros caballos. Rutas guiadas hacia el Mirador Gallofiti, la Ruta de la Comuna o la Laguna Roja con equipo completo.')" class="group relative rounded-2xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/10 hover:border-amber-400/50 transition-all duration-500 cursor-pointer shadow-xl">
-            <img src="caballo-zuleta.png" alt="Cabalgatas en Zuleta" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-75 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+        <!-- Título y Controles de Navegación -->
+        <div class="flex items-center justify-between mb-4 px-2">
+            <div>
+                <span class="text-amber-300 text-xs uppercase tracking-[0.25em] font-semibold">Nuestras Experiencias</span>
+                <h1 class="text-2xl md:text-4xl font-serif font-bold text-white">Descubre Zuleta</h1>
+            </div>
             
-            <div class="relative z-10">
-                <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Aventura Andina</span>
-                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">Cabalgatas</h2>
-                <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Rutas a caballo por la cordillera y senderos tradicionales de la comuna.</p>
-                <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
-                    Explorar servicio &rarr;
-                </span>
+            <!-- Botones para deslizar a la izquierda y derecha -->
+            <div class="flex gap-2">
+                <button onclick="slideLeft()" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-amber-300 hover:bg-amber-400 hover:text-stone-950 transition-all cursor-pointer">
+                    &#8592;
+                </button>
+                <button onclick="slideRight()" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-amber-300 hover:bg-amber-400 hover:text-stone-950 transition-all cursor-pointer">
+                    &#8594;
+                </button>
             </div>
         </div>
 
-        <!-- Tarjeta 2: Bordados -->
-        <div onclick="openModal('Bordados a Mano', 'Artesanía textil autóctona elaborada hilo a hilo por manos zuleteñas. Catálogo disponible en manteles para 4 personas, paneras, caminos de mesa y encargos personalizados.')" class="group relative rounded-2xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/10 hover:border-amber-400/50 transition-all duration-500 cursor-pointer shadow-xl">
-            <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Bordados" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-110 group-hover:opacity-65 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+        <!-- Barra Deslizadora Horizontal (Carrusel de Tarjetas) -->
+        <div id="slider" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar py-2 px-1">
             
-            <div class="relative z-10">
-                <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Arte Heredado</span>
-                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">Bordados a Mano</h2>
-                <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Manteles para 4 personas, paneras y piezas artesanales a medida.</p>
-                <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
-                    Ver piezas &rarr;
-                </span>
+            <!-- Tarjeta 1: Cabalgatas -->
+            <div onclick="openModal('Cabalgatas a Caballo', 'Explora las montañas y valles de Zuleta a lomo de nuestros caballos. Rutas guiadas hacia el Mirador Gallofiti, la Ruta de la Comuna o la Laguna Roja con equipo completo.')" class="min-w-[280px] sm:min-w-[340px] h-[380px] relative rounded-3xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/15 hover:border-amber-400/60 transition-all duration-500 cursor-pointer shrink-0 shadow-2xl group">
+                <img src="caballo-zuleta.png" alt="Cabalgatas" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-75 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Aventura Andina</span>
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">Cabalgatas</h2>
+                    <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Rutas a caballo por la cordillera y senderos tradicionales de la comuna.</p>
+                    <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        Ver Detalles &rarr;
+                    </span>
+                </div>
             </div>
-        </div>
 
-        <!-- Tarjeta 3: Cabañas -->
-        <div onclick="openModal('Alquiler de Cabañas', 'Un refugio único y rústico en el Sector Pan de Azúcar. Equipado con chimenea tradicional, agua caliente y espacios privados ideados para descansar en total paz.')" class="group relative rounded-2xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/10 hover:border-amber-400/50 transition-all duration-500 cursor-pointer shadow-xl">
-            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Cabañas" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-110 group-hover:opacity-65 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
-            
-            <div class="relative z-10">
-                <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Hospedaje Rústico</span>
-                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">Cabañas</h2>
-                <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Refugio con chimenea y ambiente acogedor rodeado de naturaleza.</p>
-                <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
-                    Reservar estadía &rarr;
-                </span>
+            <!-- Tarjeta 2: Bordados -->
+            <div onclick="openModal('Bordados a Mano', 'Artesanía textil autóctona elaborada hilo a hilo por manos zuleteñas. Catálogo disponible en manteles para 4 personas, paneras, caminos de mesa y encargos personalizados.')" class="min-w-[280px] sm:min-w-[340px] h-[380px] relative rounded-3xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/15 hover:border-amber-400/60 transition-all duration-500 cursor-pointer shrink-0 shadow-2xl group">
+                <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Bordados" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-75 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Arte Heredado</span>
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">Bordados a Mano</h2>
+                    <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Manteles para 4 personas, paneras y piezas artesanales hechas a medida.</p>
+                    <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        Ver Catálogo &rarr;
+                    </span>
+                </div>
             </div>
-        </div>
 
-        <!-- Tarjeta 4: Caminatas -->
-        <div onclick="openModal('Caminatas por la Comunidad', 'Paseos a pie con guías nativos por los talleres artesanales, campos agrícolas y puntos comunitarios clave para vivir de cerca la cultura de Zuleta.')" class="group relative rounded-2xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/10 hover:border-amber-400/50 transition-all duration-500 cursor-pointer shadow-xl">
-            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Caminatas" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-110 group-hover:opacity-65 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
-            
-            <div class="relative z-10">
-                <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Cultura Viva</span>
-                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">Caminatas</h2>
-                <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Recorridos comunitarios a pie por talleres y senderos autóctonos.</p>
-                <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
-                    Conocer ruta &rarr;
-                </span>
+            <!-- Tarjeta 3: Cabañas -->
+            <div onclick="openModal('Alquiler de Cabañas', 'Un refugio único y rústico en el Sector Pan de Azúcar. Equipado con chimenea tradicional, agua caliente y espacios privados ideados para descansar en total paz.')" class="min-w-[280px] sm:min-w-[340px] h-[380px] relative rounded-3xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/15 hover:border-amber-400/60 transition-all duration-500 cursor-pointer shrink-0 shadow-2xl group">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Cabañas" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-75 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Hospedaje Rústico</span>
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">Cabañas</h2>
+                    <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Refugio con chimenea y ambiente acogedor rodeado de naturaleza.</p>
+                    <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        Reservar Estadía &rarr;
+                    </span>
+                </div>
             </div>
-        </div>
 
+            <!-- Tarjeta 4: Caminatas por la Comuna -->
+            <div onclick="openModal('Caminatas por la Comunidad', 'Paseos a pie con guías nativos por los talleres artesanales, campos agrícolas y puntos comunitarios clave para vivir de cerca la cultura de Zuleta.')" class="min-w-[280px] sm:min-w-[340px] h-[380px] relative rounded-3xl overflow-hidden glass-panel p-6 flex flex-col justify-end border border-white/15 hover:border-amber-400/60 transition-all duration-500 cursor-pointer shrink-0 shadow-2xl group">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Caminatas" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-75 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <span class="text-amber-300 text-[10px] font-semibold uppercase tracking-[0.2em] block mb-1">Cultura Viva</span>
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">Caminatas</h2>
+                    <p class="text-stone-300 text-xs font-light line-clamp-2 mb-4">Recorridos comunitarios a pie por talleres y senderos autóctonos.</p>
+                    <span class="inline-flex items-center gap-1.5 text-amber-300 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        Conocer Ruta &rarr;
+                    </span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Pie de Página Sutil -->
+    <!-- Pie de Página -->
     <footer class="mt-4 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-400 font-light px-2 shrink-0 z-20">
         <p>&copy; 2026 Esthela Aguilar — Tradición Andina. Zuleta, Ecuador.</p>
-        <p class="mt-1 sm:mt-0">Haz clic en cualquier experiencia para consultar detalles.</p>
+        <p class="mt-1 sm:mt-0">Desliza horizontalmente para ver todos los servicios.</p>
     </footer>
 
-    <!-- Ventana Modal de Detalles -->
+    <!-- Ventana Modal de Información -->
     <div id="modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel text-white rounded-3xl p-8 max-w-md w-full border border-stone-700 relative shadow-2xl">
             <button onclick="closeModal()" class="absolute top-5 right-5 text-stone-400 hover:text-white text-lg">✕</button>
@@ -152,8 +177,18 @@
         </div>
     </div>
 
-    <!-- Script Interactivo -->
+    <!-- Script de la Barra Deslizadora -->
     <script>
+        const slider = document.getElementById('slider');
+
+        function slideLeft() {
+            slider.scrollBy({ left: -320, behavior: 'smooth' });
+        }
+
+        function slideRight() {
+            slider.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+
         function openModal(title, description) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = description;
