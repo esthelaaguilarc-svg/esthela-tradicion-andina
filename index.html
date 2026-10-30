@@ -91,25 +91,30 @@
         </div>
     </nav>
 
-    <!-- Panel para Cambiar Fondo Interactivamente -->
-    <div class="fixed bottom-6 right-6 z-40 bg-stone-900/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl text-white text-xs max-w-xs">
-        <p class="font-semibold mb-2 text-amber-300">Personalizar Fondo Hero:</p>
-        <div class="grid grid-cols-2 gap-2 mb-3">
-            <button onclick="changeHeroBg('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80')" class="bg-white/10 hover:bg-amber-400 hover:text-stone-900 p-1.5 rounded-lg text-center transition-all">Paisaje</button>
-            <button onclick="changeHeroBg('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1920&q=80')" class="bg-white/10 hover:bg-amber-400 hover:text-stone-900 p-1.5 rounded-lg text-center transition-all">Cabalgatas</button>
-            <button onclick="changeHeroBg('https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=1920&q=80')" class="bg-white/10 hover:bg-amber-400 hover:text-stone-900 p-1.5 rounded-lg text-center transition-all">Bordados</button>
-            <button onclick="changeHeroBg('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80')" class="bg-white/10 hover:bg-amber-400 hover:text-stone-900 p-1.5 rounded-lg text-center transition-all">Cabaña</button>
-        </div>
-        <input type="text" id="bg-url-input" placeholder="Pegar URL de tu foto..." class="w-full bg-white/5 border border-white/20 rounded-lg px-2.5 py-1.5 text-stone-200 placeholder-stone-500 mb-2 focus:outline-none focus:border-amber-400">
-        <button onclick="applyCustomBg()" class="w-full bg-amber-400 text-stone-900 font-bold py-1.5 rounded-lg hover:bg-amber-300 transition-colors">Aplicar Foto Propia</button>
-    </div>
-
-    <!-- Hero Section Cautivador -->
+    <!-- Hero Section con Mosaico de Servicios de Fondo -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-zuleta-green">
-        <div class="absolute inset-0 z-0">
-            <img id="hero-bg-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" alt="Zuleta Paisaje" class="w-full h-full object-cover opacity-40 scale-105 transition-all duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/60 to-black/70"></div>
+        <!-- Fondo Integrado Mosaico Representando los 4 Servicios -->
+        <div class="absolute inset-0 z-0 grid grid-cols-2 md:grid-cols-4 gap-1 opacity-35">
+            <div class="relative h-full">
+                <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80" alt="Cabalgatas" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-zuleta-green/40"></div>
+            </div>
+            <div class="relative h-full">
+                <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Bordados" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-zuleta-green/40"></div>
+            </div>
+            <div class="relative h-full">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Cabañas" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-zuleta-green/40"></div>
+            </div>
+            <div class="relative h-full">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Caminatas" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-zuleta-green/40"></div>
+            </div>
         </div>
+
+        <!-- Capa Oscura Sofisticada para Lectura Perfecta -->
+        <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/80 to-black/70 z-0"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white py-20">
             <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif tracking-tight mb-6 leading-tight text-glow">
@@ -332,7 +337,7 @@
         </div>
     </div>
 
-    <!-- Scripts de Funcionalidad -->
+    <!-- Script de Navegación -->
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -340,17 +345,6 @@
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        function changeHeroBg(url) {
-            document.getElementById('hero-bg-img').src = url;
-        }
-
-        function applyCustomBg() {
-            const inputUrl = document.getElementById('bg-url-input').value.trim();
-            if (inputUrl) {
-                changeHeroBg(inputUrl);
-            }
-        }
 
         function openModal(title, description) {
             document.getElementById('modal-title').innerText = title;
