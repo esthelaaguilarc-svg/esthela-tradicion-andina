@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esthela Aguilar - Tradición Andina | Zuleta, Ecuador</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Esthela Aguilar — Experiencia Andina en Zuleta</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
                         zuleta: {
-                            green: '#1b4332',
-                            lightgreen: '#2d6a4f',
-                            earth: '#8d5b4c',
-                            terracotta: '#bc4749',
-                            cream: '#fdfbf7',
-                            gold: '#d4af37'
+                            green: '#0f291e',
+                            gold: '#d4af37',
+                            cream: '#fbf9f5',
+                            terracotta: '#a84227'
                         }
                     }
                 }
@@ -32,273 +31,272 @@
         }
     </script>
     <style>
+        .glass-header {
+            background: rgba(15, 41, 30, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
         }
     </style>
 </head>
-<body class="bg-zuleta-cream text-gray-800 font-sans antialiased selection:bg-zuleta-earth selection:text-white">
+<body class="bg-zuleta-cream text-stone-800 font-sans antialiased selection:bg-amber-800 selection:text-amber-100">
 
-    <!-- Navegación -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/60 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full bg-zuleta-green text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
-                        E
-                    </div>
+    <!-- Navegación Flotante Minimalista -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-header border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-24">
+                <a href="#" class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-full border border-amber-400/50 text-amber-300 flex items-center justify-center font-serif text-xl tracking-wider">E</span>
                     <div>
-                        <span class="block text-lg font-bold tracking-tight text-zuleta-green leading-none">ESTHELA AGUILAR</span>
-                        <span class="block text-xs font-semibold tracking-widest text-zuleta-earth uppercase mt-1">Tradición Andina</span>
+                        <span class="block text-lg font-serif tracking-widest text-white leading-none">ESTHELA AGUILAR</span>
+                        <span class="block text-[10px] tracking-[0.25em] text-amber-300/80 uppercase mt-1">Zuleta · Ecuador</span>
                     </div>
                 </a>
 
-                <!-- Menú Escritorio -->
-                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-stone-700">
-                    <a href="#inicio" class="hover:text-zuleta-green transition-colors">Inicio</a>
-                    <a href="#servicios" class="hover:text-zuleta-green transition-colors">Servicios</a>
-                    <a href="#bordados" class="hover:text-zuleta-green transition-colors">Bordados</a>
-                    <a href="#ubicacion" class="hover:text-zuleta-green transition-colors">Ubicación</a>
+                <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-widest font-medium text-stone-300">
+                    <a href="#inicio" class="hover:text-amber-300 transition-colors">Inicio</a>
+                    <a href="#experiencias" class="hover:text-amber-300 transition-colors">Experiencias</a>
+                    <a href="#galeria" class="hover:text-amber-300 transition-colors">Bordados</a>
+                    <a href="#contacto" class="hover:text-amber-300 transition-colors">Ubicación</a>
                 </div>
 
-                <!-- Botón CTA WhatsApp -->
-                <div class="hidden md:block">
-                    <a href="https://wa.me/593000000000?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios%20en%20Zuleta" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        WhatsApp Directo
-                    </a>
-                </div>
+                <a href="https://wa.me/593000000000?text=Hola,%20deseo%20reservar%20una%20experiencia" target="_blank" class="hidden sm:inline-flex items-center gap-2 border border-amber-400/40 hover:border-amber-400 bg-amber-400/10 hover:bg-amber-400 hover:text-stone-900 text-amber-200 px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300">
+                    <span>Reservar</span>
+                </a>
 
-                <!-- Botón Menú Móvil -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-700 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Dropdown Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="block py-2 text-stone-700 font-medium border-b border-stone-100">Inicio</a>
-            <a href="#servicios" class="block py-2 text-stone-700 font-medium border-b border-stone-100">Servicios</a>
-            <a href="#bordados" class="block py-2 text-stone-700 font-medium border-b border-stone-100">Bordados</a>
-            <a href="#ubicacion" class="block py-2 text-stone-700 font-medium border-b border-stone-100">Ubicación</a>
-            <a href="https://wa.me/593000000000?text=Hola,%20quisiera%20más%20información" target="_blank" class="w-full mt-4 flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-md">
-                ¡Consulta por WhatsApp!
-            </a>
+        <div id="mobile-menu" class="hidden md:hidden glass-header border-b border-white/10 px-6 py-6 space-y-4 text-center">
+            <a href="#inicio" class="block text-white text-sm uppercase tracking-widest">Inicio</a>
+            <a href="#experiencias" class="block text-white text-sm uppercase tracking-widest">Experiencias</a>
+            <a href="#galeria" class="block text-white text-sm uppercase tracking-widest">Bordados</a>
+            <a href="#contacto" class="block text-white text-sm uppercase tracking-widest">Ubicación</a>
+            <a href="https://wa.me/593000000000" target="_blank" class="block bg-amber-400 text-stone-900 py-3 rounded-full text-xs font-bold uppercase tracking-wider">Reservar Experiencia</a>
         </div>
     </nav>
 
-    <!-- Hero Section con Texto Corto y Elegante -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-stone-900">
+    <!-- Hero Section Cautivador -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-zuleta-green">
+        <!-- Imagen de Fondo con Overlay Oscuro Dramático -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" alt="Campo de Zuleta Imbabura" class="w-full h-full object-cover object-center opacity-55 scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/40 to-stone-950/70"></div>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" alt="Zuleta Paisaje" class="w-full h-full object-cover opacity-40 scale-105 animate-pulse transition-all duration-10000">
+            <div class="absolute inset-0 bg-gradient-to-t from-zuleta-green via-zuleta-green/60 to-black/70"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white py-16">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-3 leading-none">
-                ESTHELA AGUILAR
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white py-20">
+            <div class="inline-block mb-6">
+                <span class="px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/5 text-amber-200 text-xs tracking-[0.3em] uppercase font-light">
+                    Turismo Rural & Tradición
+                </span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif tracking-tight mb-6 leading-tight text-glow">
+                Vive Zuleta.
             </h1>
 
-            <p class="text-2xl sm:text-3xl md:text-4xl font-serif italic text-amber-200/90 tracking-wide mb-6">
-                La Esencia del Campo Andino
+            <p class="text-lg sm:text-2xl font-light text-stone-300 max-w-2xl mx-auto mb-12 leading-relaxed tracking-wide">
+                Cabalgatas por la cordillera, bordados a mano, caminatas por la comuna y el refugio ideal en nuestras cabañas.
             </p>
 
-            <p class="text-base sm:text-lg text-stone-300 max-w-xl mx-auto font-light mb-10 leading-relaxed">
-                Cabalgatas por la cordillera, bordados a mano, caminatas por la comunidad y el refugio ideal en nuestras cabañas.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://wa.me/593000000000?text=Hola,%20quisiera%20reservar%20una%20experiencia%20en%20Zuleta" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5">
-                    Reservar Experiencia por WhatsApp
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="https://wa.me/593000000000?text=Hola,%20deseo%20vincularme%20a%20una%20experiencia%20en%20Zuleta" target="_blank" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-stone-950 px-9 py-4 rounded-full font-semibold text-xs uppercase tracking-[0.2em] shadow-2xl hover:shadow-amber-400/20 transition-all duration-300 transform hover:-translate-y-1">
+                    Reservar por WhatsApp
                 </a>
-                <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-semibold text-base transition-all duration-300">
-                    Descubrir Servicios
+                <a href="#experiencias" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white px-9 py-4 rounded-full font-medium text-xs uppercase tracking-[0.2em] transition-all duration-300 border border-white/20">
+                    Explorar Experiencias
                 </a>
             </div>
         </div>
+
+        <!-- Indicador de Desplazamiento -->
+        <a href="#experiencias" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-amber-200/60 hover:text-amber-200 transition-colors flex flex-col items-center gap-2">
+            <span class="text-[10px] uppercase tracking-[0.3em] font-light">Descubrir</span>
+            <div class="w-4 h-7 border border-amber-200/40 rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-amber-200 rounded-full animate-bounce"></div>
+            </div>
+        </a>
     </section>
 
-    <!-- Sección de Servicios Principales -->
-    <section id="servicios" class="py-24 bg-stone-100/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-zuleta-earth mb-3">Nuestras Experiencias</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-stone-900">Vive Zuleta a tu Propio Ritmo</p>
-                <div class="w-20 h-1 bg-zuleta-earth mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Cabalgata a Caballo -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            🐎
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-3">Cabalgata a Caballo</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Recorre la Ruta de la Comuna, Mirador Gallofiti o la Laguna Roja a lomo de caballo, disfrutando del paisaje andino.
-                        </p>
-                    </div>
-                    <button onclick="openModal('Cabalgata a Caballo', 'Disfruta de rutas personalizadas a caballo por los hermosos senderos de Zuleta y el Sector Pan de Azúcar. Incluye guía local y equipo de protección.')" class="text-zuleta-green font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
-                        Ver Detalles &rarr;
-                    </button>
-                </div>
-
-                <!-- Venta de Bordados a Mano -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            🪡
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-3">Bordados a Mano</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Piezas únicas elaboradas artesanalmente: manteles para 4 personas, paneras, caminos de mesa y diseños a pedido.
-                        </p>
-                    </div>
-                    <a href="#bordados" class="text-zuleta-green font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-                        Ver Catálogo &rarr;
-                    </a>
-                </div>
-
-                <!-- Cabañas -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            🏡
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-3">Cabañas</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Alojamiento rústico y acogedor en el sector Pan de Azúcar, ideal para descansar y desconectar rodeado de naturaleza.
-                        </p>
-                    </div>
-                    <button onclick="openModal('Cabañas', 'Cabañas totalmente equipadas con chimenea, vista panorámica al valle, agua caliente y área de descanso privada. Capacidad adaptable.')" class="text-zuleta-green font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
-                        Ver Detalles &rarr;
-                    </button>
-                </div>
-
-                <!-- Caminata por la Comunidad -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            🌾
-                        </div>
-                        <h3 class="text-xl font-bold text-stone-900 mb-3">Caminata por la Comunidad</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Conoce la historia comunitaria, la gastronomía rural y la calidez de nuestra gente en un recorrido guiado a pie.
-                        </p>
-                    </div>
-                    <button onclick="openModal('Caminata por la Comunidad', 'Camina por los talleres artesanales, campos agrícolas y puntos gastronómicos tradicionales de Zuleta acompañados de guías nativos.')" class="text-zuleta-green font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
-                        Ver Detalles &rarr;
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Muestra de Bordados a Mano -->
-    <section id="bordados" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <!-- Experiencias Cautivadoras -->
+    <section id="experiencias" class="py-32 bg-zuleta-cream relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
                 <div>
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-zuleta-earth mb-2">Artesanía Textil</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-stone-900">Bordados a Mano Tradicionales</p>
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-zuleta-terracotta">Exclusividad Andina</span>
+                    <h2 class="text-4xl sm:text-5xl font-serif text-stone-900 mt-2">Nuestras Experiencias</h2>
                 </div>
-                <p class="text-stone-500 max-w-md mt-4 md:mt-0 text-sm">
-                    Cada puntada plasma la identidad de nuestra tierra. Creamos prendas y lencería para el hogar con diseños autóctonos de Zuleta.
+                <p class="text-stone-500 max-w-md mt-4 md:mt-0 text-sm leading-relaxed font-light">
+                    Cuatro formas auténticas de conectar con la magia, la cultura y la tranquilidad del Sector Pan de Azúcar.
                 </p>
             </div>
 
-            <!-- Galería de Bordados -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Manteles bordados Zuleta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-stone-800">100% Hecho a Mano</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Cabalgata -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-stone-900 text-white min-h-[420px] flex flex-col justify-end p-8 border border-stone-800 transition-all duration-500 hover:shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80" alt="Cabalgata a caballo" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-2 block">Aventura Andina</span>
+                        <h3 class="text-3xl font-serif mb-3">Cabalgatas a Caballo</h3>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed mb-6">
+                            Senderos hacia el Mirador Gallofiti, la Ruta de la Comuna o la Laguna Roja a lomo de nuestros caballos.
+                        </p>
+                        <button onclick="openModal('Cabalgatas a Caballo', 'Rutas guiadas por expertos locales adaptadas a todos los niveles. Incluye equipo completo de montura y acompañamiento personalizado.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-200 group-hover:text-amber-300 font-semibold cursor-pointer">
+                            <span>Ver Detalles</span> &rarr;
+                        </button>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-stone-900 mb-1">Manteles para 4 Personas</h4>
-                        <p class="text-xs text-stone-500 mb-4">Diseños florales y figuras andinas confeccionadas con hilo fino.</p>
-                        <a href="https://wa.me/593000000000?text=Deseo%20cotizar%20un%20mantel%20bordado%20a%20mano" target="_blank" class="w-full inline-flex justify-center bg-stone-900 hover:bg-zuleta-green text-white py-2.5 rounded-xl font-medium text-sm transition-colors">
-                            Cotizar por WhatsApp
+                </div>
+
+                <!-- Card 2: Bordados -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-stone-900 text-white min-h-[420px] flex flex-col justify-end p-8 border border-stone-800 transition-all duration-500 hover:shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Bordados a mano" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-2 block">Arte Heredado</span>
+                        <h3 class="text-3xl font-serif mb-3">Bordados a Mano</h3>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed mb-6">
+                            Manteles para 4 personas, paneras y piezas textiles exclusivas confeccionadas con técnica tradicional.
+                        </p>
+                        <a href="#galeria" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-200 group-hover:text-amber-300 font-semibold">
+                            <span>Ver Catálogo</span> &rarr;
                         </a>
                     </div>
                 </div>
 
-                <div class="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Paneras bordadas Zuleta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-stone-800">Popular</span>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-stone-900 mb-1">Paneras y Caminos de Mesa</h4>
-                        <p class="text-xs text-stone-500 mb-4">Detalles elegantes para vestir la mesa con la calidez del campo.</p>
-                        <a href="https://wa.me/593000000000?text=Deseo%20cotizar%20paneras%20o%20caminos%20de%20mesa" target="_blank" class="w-full inline-flex justify-center bg-stone-900 hover:bg-zuleta-green text-white py-2.5 rounded-xl font-medium text-sm transition-colors">
-                            Cotizar por WhatsApp
-                        </a>
+                <!-- Card 3: Cabañas -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-stone-900 text-white min-h-[420px] flex flex-col justify-end p-8 border border-stone-800 transition-all duration-500 hover:shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Cabaña rústica" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-2 block">Descanso Privado</span>
+                        <h3 class="text-3xl font-serif mb-3">Alquiler de Cabañas</h3>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed mb-6">
+                            Espacios rústicos equipados con chimenea y vistas panorámicas para desconectar en total privacidad.
+                        </p>
+                        <button onclick="openModal('Alquiler de Cabañas', 'Nuestras cabañas están totalmente equipadas con agua caliente, chimenea rústica y zona exterior de descanso. Ideales para parejas o familias.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-200 group-hover:text-amber-300 font-semibold cursor-pointer">
+                            <span>Ver Detalles</span> &rarr;
+                        </button>
                     </div>
                 </div>
 
-                <div class="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 group sm:col-span-2 lg:col-span-1">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Pedidos personalizados" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-stone-800">A Pedido</span>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-stone-900 mb-1">Diseños Personalizados</h4>
-                        <p class="text-xs text-stone-500 mb-4">Encarga motivos, colores y tamaños específicos a la medida.</p>
-                        <a href="https://wa.me/593000000000?text=Me%20interesa%20un%20diseño%20personalizado%20de%20bordado" target="_blank" class="w-full inline-flex justify-center bg-stone-900 hover:bg-zuleta-green text-white py-2.5 rounded-xl font-medium text-sm transition-colors">
-                            Personalizar Pedido
-                        </a>
+                <!-- Card 4: Caminata por la Comunidad -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-stone-900 text-white min-h-[420px] flex flex-col justify-end p-8 border border-stone-800 transition-all duration-500 hover:shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Caminata por Zuleta" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-2 block">Cultura Viva</span>
+                        <h3 class="text-3xl font-serif mb-3">Caminata por la Comunidad</h3>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed mb-6">
+                            Recorridos a pie acompañados por guías locales para conocer talleres artesanales y la vida rural.
+                        </p>
+                        <button onclick="openModal('Caminata por la Comunidad', 'Paseos interactivos por los talleres de bordado, campos agrícolas y puntos históricos de Zuleta. Una inmersión cultural auténtica.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-200 group-hover:text-amber-300 font-semibold cursor-pointer">
+                            <span>Ver Detalles</span> &rarr;
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ubicación y Mapa -->
-    <section id="ubicacion" class="py-24 bg-stone-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Galería de Bordados Exclusivos -->
+    <section id="galeria" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-zuleta-terracotta">Artesanía de Zuleta</span>
+                <h2 class="text-4xl sm:text-5xl font-serif text-stone-900 mt-2">Piezas Hechas a Mano</h2>
+                <div class="w-12 h-0.5 bg-amber-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="glass-card-light rounded-3xl p-6 border border-stone-200 text-center flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 rounded-2xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80" alt="Mantel bordado" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-xl text-stone-900 mb-2">Manteles para 4 Personas</h4>
+                        <p class="text-stone-500 text-xs font-light mb-6">Diseños florales bordados punto a punto con hilos de alta calidad.</p>
+                    </div>
+                    <a href="https://wa.me/593000000000?text=Me%20interesa%20un%20mantel%20bordado" target="_blank" class="w-full border border-stone-900 hover:bg-stone-900 hover:text-white py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Cotizar Pieza
+                    </a>
+                </div>
+
+                <div class="glass-card-light rounded-3xl p-6 border border-stone-200 text-center flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 rounded-2xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Panera bordada" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-xl text-stone-900 mb-2">Paneras & Caminos de Mesa</h4>
+                        <p class="text-stone-500 text-xs font-light mb-6">Detalles sutiles para enriquecer cualquier espacio con calidez andina.</p>
+                    </div>
+                    <a href="https://wa.me/593000000000?text=Me%20interesa%20una%20panera%20o%20camino%20de%20mesa" target="_blank" class="w-full border border-stone-900 hover:bg-stone-900 hover:text-white py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Cotizar Pieza
+                    </a>
+                </div>
+
+                <div class="glass-card-light rounded-3xl p-6 border border-stone-200 text-center flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 rounded-2xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Bordado personalizado" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-xl text-stone-900 mb-2">Encargos Personalizados</h4>
+                        <p class="text-stone-500 text-xs font-light mb-6">Personaliza tus colores, motivos y dimensiones a la medida.</p>
+                    </div>
+                    <a href="https://wa.me/593000000000?text=Quisiera%20encargar%20un%20diseño%20personalizado" target="_blank" class="w-full border border-stone-900 hover:bg-stone-900 hover:text-white py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Personalizar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Elegante -->
+    <section id="contacto" class="py-32 bg-zuleta-green text-white relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">¿Dónde Encontrarnos?</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold mt-2 mb-6">Visítanos en Zuleta</h2>
-                    <p class="text-stone-300 leading-relaxed mb-8">
-                        Estamos ubicados en la parroquia de Zuleta, en el hermoso sector Pan de Azúcar. Un entorno natural único con aire puro, volcanes de fondo y la calidez de nuestra comunidad.
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-300">Ubicación</span>
+                    <h2 class="text-4xl sm:text-5xl font-serif mt-2 mb-8">Visítanos en Zuleta</h2>
+                    <p class="text-stone-300 font-light leading-relaxed mb-10 text-sm">
+                        Nos encontramos en el Sector Pan de Azúcar, en el corazón de la parroquia de Zuleta. Un enclave rodeado de montañas y tranquilidad.
                     </p>
 
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">📍</div>
-                            <div>
-                                <h4 class="font-semibold text-white">Dirección Exacta</h4>
-                                <p class="text-stone-400 text-sm">Zuleta · Sector Pan de Azúcar · Imbabura, Ecuador</p>
-                            </div>
+                    <div class="space-y-6 text-sm font-light">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-full border border-amber-400/30 flex items-center justify-center text-amber-300">📍</span>
+                            <span>Zuleta · Sector Pan de Azúcar · Imbabura, Ecuador</span>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">📱</div>
-                            <div>
-                                <h4 class="font-semibold text-white">Contacto Directo</h4>
-                                <p class="text-stone-400 text-sm">+593 xxxxxxx</p>
-                            </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-full border border-amber-400/30 flex items-center justify-center text-amber-300">📱</span>
+                            <span>Contacto directo por WhatsApp</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="rounded-3xl overflow-hidden bg-stone-800 border border-stone-700 p-8 text-center flex flex-col justify-center items-center min-h-[300px]">
-                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4">
-                        🌄
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Comuna de Zuleta</h3>
-                    <p class="text-stone-400 text-sm max-w-sm mb-6">A tan solo 30 minutos de Ibarra y cerca de la provincia de Pichincha.</p>
-                    <a href="https://wa.me/593000000000?text=Hola,%20necesito%20indicaciones%20para%20llegar%20a%20Esthela%20Aguilar" target="_blank" class="bg-white text-stone-900 font-bold px-6 py-3 rounded-full hover:bg-stone-200 transition-colors">
-                        Solicitar Ubicación por WhatsApp
+                <div class="glass-card rounded-3xl p-10 text-center border border-white/10">
+                    <span class="text-4xl mb-4 block">🌄</span>
+                    <h3 class="text-2xl font-serif mb-3">Planifica tu Visita</h3>
+                    <p class="text-stone-300 text-xs font-light max-w-sm mx-auto mb-8 leading-relaxed">
+                        Contáctanos para coordinar tus actividades, verificar disponibilidad de cabaña o solicitar tus piezas bordadas.
+                    </p>
+                    <a href="https://wa.me/593000000000?text=Hola,%20deseo%20planificar%20mi%20visita" target="_blank" class="inline-block bg-amber-400 hover:bg-amber-300 text-stone-950 px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Escribir por WhatsApp
                     </a>
                 </div>
             </div>
@@ -306,29 +304,29 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-stone-500 py-12 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 text-center sm:flex sm:justify-between sm:text-left items-center">
+    <footer class="bg-black text-stone-500 py-12 border-t border-stone-900 text-xs font-light">
+        <div class="max-w-7xl mx-auto px-6 text-center sm:flex sm:justify-between sm:text-left items-center">
             <div class="mb-4 sm:mb-0">
-                <p class="text-white font-bold">ESTHELA AGUILAR</p>
-                <p class="text-xs text-stone-400">Tradición Andina · Zuleta, Ecuador</p>
+                <p class="text-white font-serif text-sm">ESTHELA AGUILAR</p>
+                <p class="text-stone-600 mt-0.5">Tradición Andina · Zuleta, Ecuador</p>
             </div>
-            <p class="text-xs">&copy; 2026 Todos los derechos reservados. Diseñado para el turismo rural y tradicional.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Modal Interactivo para Detalles -->
-    <div id="modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 text-xl font-bold">✕</button>
-            <h3 id="modal-title" class="text-2xl font-bold text-stone-900 mb-3"></h3>
-            <p id="modal-desc" class="text-stone-600 text-sm leading-relaxed mb-6"></p>
-            <a id="modal-whatsapp" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-semibold shadow-md transition-all">
-                Reservar / Consultar por WhatsApp
+    <!-- Modal Interactivo -->
+    <div id="modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-6">
+        <div class="bg-stone-900 text-white rounded-3xl p-8 max-w-md w-full border border-stone-800 relative">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-stone-400 hover:text-white text-lg">✕</button>
+            <h3 id="modal-title" class="text-2xl font-serif text-amber-300 mb-4"></h3>
+            <p id="modal-desc" class="text-stone-300 text-xs font-light leading-relaxed mb-8"></p>
+            <a id="modal-whatsapp" href="#" target="_blank" class="w-full inline-flex justify-center bg-amber-400 text-stone-950 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-amber-300 transition-colors">
+                Consultar Disponibilidad
             </a>
         </div>
     </div>
 
-    <!-- Script de Interactividad -->
+    <!-- Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -340,7 +338,7 @@
         function openModal(title, description) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = description;
-            const encodedText = encodeURIComponent(`Hola, me interesa obtener más información sobre: ${title}`);
+            const encodedText = encodeURIComponent(`Hola, quisiera consultar más sobre: ${title}`);
             document.getElementById('modal-whatsapp').href = `https://wa.me/593000000000?text=${encodedText}`;
             document.getElementById('modal').classList.remove('hidden');
         }
@@ -351,9 +349,7 @@
 
         window.onclick = function(event) {
             const modal = document.getElementById('modal');
-            if (event.target === modal) {
-                closeModal();
-            }
+            if (event.target === modal) closeModal();
         }
     </script>
 </body>
